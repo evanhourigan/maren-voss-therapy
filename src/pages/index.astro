@@ -68,7 +68,7 @@ const specialties = [
           <div class="specialty-card">
             <h3 class="specialty-card__title">{item.title}</h3>
             <p class="specialty-card__desc">{item.description}</p>
-            <a href={item.href} class="specialty-card__link text-link-dark">Learn more &rarr;</a>
+            <a href={item.href} class="specialty-card__link text-link-dark">Learn more about {item.title} &rarr;</a>
           </div>
         ))}
       </div>
@@ -238,7 +238,7 @@ const specialties = [
     align-items: center;
     justify-content: center;
     background-color: var(--warm-charcoal);
-    color: var(--text-muted);
+    color: var(--text-muted-light);
     font-family: var(--font-sans);
     font-size: var(--caption);
     letter-spacing: 0.1em;
@@ -255,8 +255,8 @@ const specialties = [
   }
 
   .section-cream .placeholder-block {
-    background-color: #e0dbd4;
-    color: var(--text-muted);
+    background-color: #d5cfc8;
+    color: #5a5450;
   }
 
   /* Testimonial */
@@ -307,6 +307,10 @@ const specialties = [
 
     .approach-preview__image {
       order: -1;
+    }
+
+    .testimonial__quote {
+      font-size: 4rem;
     }
   }
 

@@ -56,7 +56,7 @@
   /* Text */
   --text-light: #e8e2d9;
   --text-dark: #1a1a1a;
-  --text-muted: #8a8279;
+  --text-muted: #736b63;
   --text-muted-light: #a09a91;
 
   /* Accent */
@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
    =========================== */
 
 .text-link-dark {
-  color: var(--terracotta);
+  color: #ce674a;
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 200ms ease;
@@ -221,14 +221,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-link-light {
-  color: var(--terracotta);
+  color: var(--terracotta-hover-light);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 200ms ease;
 }
 
 .text-link-light:hover {
-  color: var(--terracotta-hover-light);
+  color: #903e2a;
 }
 
 .btn {
@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
-  background-color: var(--terracotta);
+  background-color: #be583c;
   color: var(--white);
   transition: background-color 200ms ease;
 }
