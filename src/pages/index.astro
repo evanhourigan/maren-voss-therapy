@@ -1,0 +1,327 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+const specialties = [
+  {
+    title: 'Trauma & PTSD',
+    description: 'You don\u2019t have to retell your story a hundred times to heal from it. EMDR and somatic approaches can reach what talk therapy alone often can\u2019t.',
+    href: '/trauma-ptsd',
+  },
+  {
+    title: 'Anxiety',
+    description: 'Anxiety isn\u2019t the problem. It\u2019s the signal. I\u2019ll help you figure out what it\u2019s actually trying to tell you, and what to do about it.',
+    href: '/anxiety',
+  },
+  {
+    title: 'Burnout & High-Achiever Stress',
+    description: 'You\u2019ve optimized everything except your own wellbeing. I know this pattern from the inside. There\u2019s a way out that doesn\u2019t require blowing up your life.',
+    href: '/burnout',
+  },
+  {
+    title: 'Relationship Patterns',
+    description: 'If you keep ending up in the same dynamic, the issue isn\u2019t your partner. It\u2019s the part of you that learned to survive by performing, withdrawing, or accommodating.',
+    href: '/relationship-patterns',
+  },
+  {
+    title: 'Life Transitions',
+    description: 'Career changes, identity shifts, becoming a parent, starting over. The old version of you got you here. Therapy can help you figure out who comes next.',
+    href: '/life-transitions',
+  },
+];
+---
+
+<BaseLayout
+  title="Maren Voss, LMFT | EMDR & Trauma Therapist in Oakland, CA"
+  description="Oakland-based therapist specializing in EMDR, trauma, anxiety, and burnout. I work with high-achieving adults who are ready to go deeper. Free consultation available."
+>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="hero section-dark section--hero">
+    <div class="container">
+      <h1 class="heading-hero hero__headline">You've done the work.<br />It's time to go deeper.</h1>
+      <p class="hero__subtext">I'm Maren Voss, a licensed therapist in Oakland specializing in EMDR, trauma, and anxiety. I work with high-achieving adults who are tired of coping and ready to actually change.</p>
+      <a href="/contact" class="btn">Schedule a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- The Short Version -->
+  <section class="short-version section-cream section">
+    <div class="container">
+      <div class="short-version__content body-text">
+        <p>Most of my clients have been to therapy before. They're not starting from zero. They're smart, self-aware, and functioning well enough that no one around them is worried. But something still isn't working.</p>
+        <p>The anxiety that never fully resolves. The relationship pattern that keeps repeating. The success that looks right on paper but feels hollow in the body.</p>
+        <p>I use EMDR, IFS, and somatic therapy to get underneath the stories you've been telling yourself and into the places where real change happens. My office is in Rockridge, Oakland. I also see clients across California via telehealth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Treat -->
+  <section class="specialties section-dark section">
+    <div class="container">
+      <h2 class="heading-section specialties__heading">What I Treat</h2>
+      <div class="specialties__grid">
+        {specialties.map((item) => (
+          <div class="specialty-card">
+            <h3 class="specialty-card__title">{item.title}</h3>
+            <p class="specialty-card__desc">{item.description}</p>
+            <a href={item.href} class="specialty-card__link text-link-dark">Learn more &rarr;</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Beyond Talk Therapy -->
+  <section class="approach-preview section-cream section">
+    <div class="container approach-preview__layout">
+      <div class="approach-preview__text">
+        <h2 class="heading-section">Beyond Talk Therapy</h2>
+        <div class="body-text">
+          <p>I don't do a lot of homework assignments or thought exercises. I'm more interested in what happens in your body when you tell me something difficult. That's where the real information is.</p>
+          <p>My approach integrates EMDR (a structured method for processing traumatic memories), IFS (a way of understanding the different parts of your internal world), and somatic awareness (paying attention to what your body knows that your mind hasn't caught up to yet).</p>
+          <p>These aren't separate treatments I rotate between. They work together, and I tailor how I use them based on what you need in any given session.</p>
+        </div>
+        <a href="/how-i-work" class="text-link-light approach-preview__cta">Learn About My Approach &rarr;</a>
+      </div>
+      <div class="approach-preview__image" aria-label="Therapy office placeholder">
+        <span class="placeholder-block placeholder-block--landscape">OFFICE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="about-preview section-dark section">
+    <div class="container about-preview__layout">
+      <div class="about-preview__image" aria-label="Headshot placeholder">
+        <span class="placeholder-block placeholder-block--portrait">HEADSHOT</span>
+      </div>
+      <div class="about-preview__text">
+        <h2 class="heading-section">A different kind of background</h2>
+        <div class="body-text">
+          <p>Before I was a therapist, I was a UX researcher at a tech company in the South Bay. I was good at the work. I was also having panic attacks in the bathroom before stakeholder meetings and calling it normal.</p>
+          <p>Therapy changed my life. Now I do this work with people who remind me of who I used to be: accomplished, anxious, and ready to stop performing wellness and start actually experiencing it.</p>
+        </div>
+        <a href="/about" class="text-link-dark about-preview__cta">Read My Full Story &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial section-cream section">
+    <div class="container testimonial__inner">
+      <span class="testimonial__quote" aria-hidden="true">&ldquo;</span>
+      <blockquote class="testimonial__text">
+        I'd done talk therapy for years. The EMDR work with Maren got to things in three months that I couldn't reach in five years of talking.
+      </blockquote>
+      <cite class="testimonial__attribution">&mdash; Client, 2024</cite>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding-top: calc(var(--hero-pad) + 72px);
+  }
+
+  .hero__headline {
+    margin-bottom: 24px;
+    max-width: 800px;
+  }
+
+  .hero__subtext {
+    font-size: var(--body);
+    color: var(--text-muted-light);
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  /* Short Version */
+  .short-version__content {
+    max-width: 680px;
+  }
+
+  .short-version__content p {
+    margin-bottom: 24px;
+  }
+
+  .short-version__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Specialties */
+  .specialties__heading {
+    margin-bottom: 56px;
+  }
+
+  .specialties__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 40px;
+  }
+
+  .specialty-card__title {
+    font-family: var(--font-serif);
+    font-size: var(--subsection-heading);
+    margin-bottom: 12px;
+  }
+
+  .specialty-card__desc {
+    font-size: var(--body-small);
+    color: var(--text-muted-light);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .specialty-card__link {
+    font-size: var(--body-small);
+    font-weight: 500;
+  }
+
+  /* Approach Preview */
+  .approach-preview__layout {
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .approach-preview__text h2 {
+    margin-bottom: 24px;
+  }
+
+  .approach-preview__text p {
+    margin-bottom: 20px;
+  }
+
+  .approach-preview__cta {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+
+  /* About Preview */
+  .about-preview__layout {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-preview__text h2 {
+    margin-bottom: 24px;
+  }
+
+  .about-preview__text p {
+    margin-bottom: 20px;
+  }
+
+  .about-preview__cta {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+
+  /* Placeholder Blocks */
+  .placeholder-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--warm-charcoal);
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: var(--caption);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .placeholder-block--portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .placeholder-block--landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  .section-cream .placeholder-block {
+    background-color: #e0dbd4;
+    color: var(--text-muted);
+  }
+
+  /* Testimonial */
+  .testimonial__inner {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .testimonial__quote {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--terracotta);
+    margin-bottom: -20px;
+  }
+
+  .testimonial__text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 2.5vw, 1.75rem);
+    line-height: 1.5;
+    color: var(--text-dark);
+    font-style: normal;
+  }
+
+  .testimonial__attribution {
+    display: block;
+    margin-top: 24px;
+    font-family: var(--font-sans);
+    font-size: var(--body-small);
+    font-style: normal;
+    color: var(--text-muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 1023px) {
+    .specialties__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .approach-preview__layout,
+    .about-preview__layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .approach-preview__image {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .specialties__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-preview__image {
+      max-width: 320px;
+    }
+
+    .testimonial__quote {
+      font-size: 3.5rem;
+    }
+  }
+</style>

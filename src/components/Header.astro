@@ -1,0 +1,386 @@
+---
+const currentPath = Astro.url.pathname;
+
+const specialties = [
+  { href: '/trauma-ptsd', label: 'Trauma & PTSD' },
+  { href: '/anxiety', label: 'Anxiety' },
+  { href: '/burnout', label: 'Burnout' },
+  { href: '/relationship-patterns', label: 'Relationship Patterns' },
+  { href: '/life-transitions', label: 'Life Transitions' },
+];
+
+const navLinks = [
+  { href: '/about', label: 'About' },
+  { href: '#services', label: 'Services', children: specialties },
+  { href: '/how-i-work', label: 'How I Work' },
+  { href: '/fees', label: 'Fees & FAQ' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="site-header" id="site-header">
+  <nav class="site-header__nav container" aria-label="Main navigation">
+    <a href="/" class="site-header__wordmark">
+      <span class="site-header__name">Maren Voss</span>
+      <span class="site-header__credential">LMFT</span>
+    </a>
+
+    <ul class="site-header__links" id="nav-links">
+      {navLinks.map((link) => (
+        <li class={`site-header__item${link.children ? ' has-dropdown' : ''}`}>
+          {link.children ? (
+            <>
+              <button
+                class="site-header__link site-header__dropdown-trigger"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                {link.label}
+                <svg class="site-header__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <ul class="site-header__dropdown" role="menu">
+                {link.children.map((child) => (
+                  <li role="none">
+                    <a href={child.href} class="site-header__dropdown-link" role="menuitem">
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <a
+              href={link.href}
+              class={`site-header__link${currentPath === link.href ? ' is-active' : ''}`}
+            >
+              {link.label}
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <a href="/contact" class="btn site-header__cta">Schedule a Consultation</a>
+
+    <button
+      class="site-header__hamburger"
+      id="hamburger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="site-header__hamburger-line"></span>
+      <span class="site-header__hamburger-line"></span>
+      <span class="site-header__hamburger-line"></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav aria-label="Mobile navigation">
+    <ul class="mobile-menu__links">
+      <li><a href="/" class="mobile-menu__link">Home</a></li>
+      <li><a href="/about" class="mobile-menu__link">About</a></li>
+      {specialties.map((s) => (
+        <li><a href={s.href} class="mobile-menu__link mobile-menu__link--sub">{s.label}</a></li>
+      ))}
+      <li><a href="/how-i-work" class="mobile-menu__link">How I Work</a></li>
+      <li><a href="/fees" class="mobile-menu__link">Fees & FAQ</a></li>
+      <li><a href="/blog" class="mobile-menu__link">Blog</a></li>
+      <li><a href="/contact" class="mobile-menu__link">Contact</a></li>
+    </ul>
+    <a href="/contact" class="btn mobile-menu__cta">Schedule a Consultation</a>
+  </nav>
+</div>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transition: background-color 300ms ease;
+  }
+
+  .site-header.is-scrolled {
+    background-color: var(--warm-charcoal);
+  }
+
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .site-header__wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .site-header__name {
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    color: var(--text-light);
+  }
+
+  .site-header__credential {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--text-muted-light);
+    text-transform: uppercase;
+  }
+
+  .site-header__links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .site-header__item {
+    position: relative;
+  }
+
+  .site-header__link {
+    font-family: var(--font-sans);
+    font-size: var(--nav);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 200ms ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .site-header__link:hover,
+  .site-header__link.is-active {
+    color: var(--terracotta);
+  }
+
+  .site-header__chevron {
+    transition: transform 200ms ease;
+  }
+
+  .site-header__dropdown-trigger[aria-expanded="true"] .site-header__chevron {
+    transform: rotate(180deg);
+  }
+
+  .site-header__dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: -16px;
+    min-width: 220px;
+    background-color: var(--warm-charcoal);
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
+  }
+
+  .has-dropdown:hover .site-header__dropdown,
+  .site-header__dropdown-trigger[aria-expanded="true"] + .site-header__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .site-header__dropdown-link {
+    display: block;
+    padding: 8px 24px;
+    font-family: var(--font-sans);
+    font-size: var(--body-small);
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  .site-header__dropdown-link:hover {
+    color: var(--terracotta);
+  }
+
+  .site-header__cta {
+    padding: 10px 24px;
+    font-size: 0.8125rem;
+    flex-shrink: 0;
+  }
+
+  .site-header__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .site-header__hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-light);
+    transition: transform 250ms ease, opacity 250ms ease;
+  }
+
+  .site-header__hamburger[aria-expanded="true"] .site-header__hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .site-header__hamburger[aria-expanded="true"] .site-header__hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header__hamburger[aria-expanded="true"] .site-header__hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background-color: var(--rich-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 250ms ease, visibility 250ms ease;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .mobile-menu__link {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  .mobile-menu__link:hover {
+    color: var(--terracotta);
+  }
+
+  .mobile-menu__link--sub {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    color: var(--text-muted-light);
+  }
+
+  .mobile-menu__link--sub:hover {
+    color: var(--terracotta);
+  }
+
+  .mobile-menu__cta {
+    display: inline-block;
+  }
+
+  @media (max-width: 767px) {
+    .site-header__links,
+    .site-header__cta {
+      display: none;
+    }
+
+    .site-header__hamburger {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .mobile-menu {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .site-header__links {
+      gap: 18px;
+    }
+
+    .site-header__link {
+      font-size: 0.8125rem;
+    }
+
+    .site-header__cta {
+      padding: 8px 16px;
+      font-size: 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  // Scroll-triggered nav background
+  const header = document.getElementById('site-header');
+  if (header) {
+    const onScroll = () => {
+      if (window.scrollY > 40) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+  }
+
+  // Desktop dropdown
+  const dropdownTrigger = document.querySelector('.site-header__dropdown-trigger');
+  if (dropdownTrigger) {
+    dropdownTrigger.addEventListener('click', () => {
+      const expanded = dropdownTrigger.getAttribute('aria-expanded') === 'true';
+      dropdownTrigger.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!(e.target as HTMLElement).closest('.has-dropdown')) {
+        dropdownTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Bash(git init:*)",
+      "Bash(npm create:*)",
+      "Bash(rm -rf red-resonance78)",
+      "Bash(mkdir -p /tmp/maren-astro)",
+      "Read(//tmp/**)",
+      "Bash(cp /tmp/maren-astro/.gitignore /Users/evan/code/maren-voss-therapy/ && mkdir -p /Users/evan/code/maren-voss-therapy/public)",
+      "Bash(npm install:*)",
+      "Bash(cd /Users/evan/code/maren-voss-therapy/public/fonts && \\\\\ncurl -sL \"https://fonts.google.com/download?family=DM+Serif+Display\" -o dm-serif-display.zip && \\\\\ncurl -sL \"https://fonts.google.com/download?family=DM+Sans\" -o dm-sans.zip && \\\\\nls -la *.zip)",
+      "Bash(\\\\ unzip:*)",
+      "Bash(ls -la /Users/evan/code/maren-voss-therapy/public/fonts/*.woff2)",
+      "Bash(cd /Users/evan/code/maren-voss-therapy && npx astro build 2>&1)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4322/)",
+      "Bash(pkill -f \"astro dev\" 2>/dev/null; echo \"done\")",
+      "Bash(git add:*)"
+    ]
+  }
+}

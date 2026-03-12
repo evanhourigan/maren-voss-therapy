@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://showcase.stillpoint.design/sitemap-index.xml

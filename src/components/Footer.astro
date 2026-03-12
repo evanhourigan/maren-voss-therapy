@@ -1,0 +1,101 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer section-dark">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__col">
+        <p class="site-footer__name">Maren Voss, LMFT</p>
+        <p class="site-footer__detail">5432 College Ave, Suite 204</p>
+        <p class="site-footer__detail">Oakland, CA 94618</p>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__detail">
+          <a href="tel:5105550173" class="site-footer__link">(510) 555-0173</a>
+        </p>
+        <p class="site-footer__detail">
+          <a href="mailto:maren@marenvosstherapy.com" class="site-footer__link">maren@marenvosstherapy.com</a>
+        </p>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__detail">
+          <a href="https://www.psychologytoday.com" class="site-footer__link" target="_blank" rel="noopener noreferrer">Psychology Today</a>
+        </p>
+        <p class="site-footer__detail">
+          <a href="https://www.instagram.com" class="site-footer__link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">&copy; {currentYear} Maren Voss Therapy. All rights reserved.</p>
+      <p class="site-footer__showcase">
+        Showcase build by <a href="https://stillpoint.design" class="site-footer__link" target="_blank" rel="noopener noreferrer">Stillpoint</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 64px 0 32px;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+    margin-bottom: 48px;
+  }
+
+  .site-footer__name {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-bottom: 8px;
+  }
+
+  .site-footer__detail {
+    font-size: var(--body-small);
+    color: var(--text-muted-light);
+    line-height: 1.6;
+  }
+
+  .site-footer__link {
+    color: var(--text-muted-light);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  .site-footer__link:hover {
+    color: var(--terracotta-hover-dark);
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .site-footer__copy,
+  .site-footer__showcase {
+    font-size: var(--caption);
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 767px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      text-align: center;
+    }
+
+    .site-footer__bottom {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+  }
+</style>

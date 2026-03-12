@@ -1,0 +1,79 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL('/og-default.png', Astro.site).toString();
+
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Maren Voss Therapy" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Font preloads -->
+    <link rel="preload" href="/fonts/dm-serif-display-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/dm-sans-500.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- JSON-LD: LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Maren Voss Therapy",
+      "description": "EMDR, trauma, and anxiety therapy in Oakland, CA",
+      "url": "https://showcase.stillpoint.design",
+      "telephone": "(510) 555-0173",
+      "email": "maren@marenvosstherapy.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5432 College Ave, Suite 204",
+        "addressLocality": "Oakland",
+        "addressRegion": "CA",
+        "postalCode": "94618"
+      },
+      "priceRange": "$$",
+      "openingHours": "Mo-Th 09:00-18:00"
+    })} />
+
+    <!-- JSON-LD: Person -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Maren Voss",
+      "jobTitle": "Licensed Marriage and Family Therapist",
+      "credential": "LMFT",
+      "url": "https://showcase.stillpoint.design",
+      "worksFor": {
+        "@type": "LocalBusiness",
+        "name": "Maren Voss Therapy"
+      }
+    })} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <slot name="header" />
+    <main id="main">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>
