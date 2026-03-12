@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+
+<BaseLayout
+  title="Trauma & PTSD Therapy in Oakland | EMDR Certified Therapist"
+  description="Specialized EMDR therapy for trauma and PTSD in Oakland, CA. EMDRIA Certified therapist offering in-person and telehealth sessions across California."
+>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="interior-hero section-dark section">
+    <div class="container">
+      <h1 class="heading-page">Trauma & PTSD</h1>
+      <p class="interior-hero__tagline">You don't have to keep talking about it to heal from it.</p>
+    </div>
+  </section>
+
+  <!-- You Might Be Here If... -->
+  <section class="section-cream section">
+    <div class="container">
+      <div class="body-text">
+        <p>You've been carrying something for a long time. Maybe it's a single event that shattered your sense of safety. Maybe it's years of smaller things that accumulated until you stopped trusting your own perceptions.</p>
+        <p>You might notice that your nervous system has a hair trigger. A tone of voice, a smell, a situation that resembles something from your past, and suddenly you're flooded with feelings that don't match the present moment. Or maybe you've gone numb. You don't feel much of anything, and you're not sure when that started.</p>
+        <p>You might have done therapy before and talked about what happened, maybe many times. It helped you understand it. But understanding hasn't changed how your body reacts. The memory still has charge. The patterns it created are still running.</p>
+        <p>You're not broken. Your nervous system is doing exactly what it learned to do to keep you safe. The problem is that it's still running a program designed for a situation that's over.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Work With This -->
+  <section class="section-dark section">
+    <div class="container">
+      <h2 class="heading-section specialty__section-heading">How I Work With This</h2>
+      <div class="body-text">
+        <p>Trauma lives in the body, not just the mind. That's why I don't rely on talk therapy alone for trauma treatment.</p>
+        <p>My primary tool is EMDR (Eye Movement Desensitization and Reprocessing). It's a structured, evidence-based protocol that helps your brain reprocess traumatic memories so they lose their emotional charge. EMDR is recognized by the World Health Organization, the American Psychological Association, and the VA as a frontline treatment for PTSD. I'm not just trained in it. I'm EMDRIA Certified, which means I've completed extensive supervised practice beyond the basic training.</p>
+        <p>I also integrate IFS (Internal Family Systems) and somatic awareness into trauma work. IFS helps us understand the parts of you that developed to protect you from the pain of the trauma. Some of those parts are exhausted. Some are angry. Some are very young and very scared. They all have a logic, and when we understand that logic, healing becomes possible.</p>
+        <p>Somatic work means we pay attention to what your body is doing while we process. Tension, numbness, bracing, breathing patterns. Your body holds information that your conscious mind may not have access to, and including it in the work makes the healing more complete.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Can Expect -->
+  <section class="section-cream section">
+    <div class="container">
+      <h2 class="heading-section specialty__section-heading">What You Can Expect</h2>
+      <div class="body-text">
+        <p>We don't jump straight into EMDR on day one. The first few sessions are about building a foundation. I need to understand your history, and you need to know that you're safe in the room with me. We'll develop resources and stabilization skills before we start processing.</p>
+        <p>When we do begin EMDR, sessions are typically 60-75 minutes. You'll follow a light bar or use bilateral tapping while allowing your mind to move through the memory. It sounds unusual. It is. It's also one of the most effective trauma treatments that exists. Most clients notice a shift within a few sessions. The memory doesn't disappear, but it stops hijacking your present.</p>
+        <p>Some people come for focused EMDR work on a specific trauma and complete treatment in 10-15 sessions. Others with complex or developmental trauma work with me for longer. I'll give you an honest assessment of what I think you need after our first few sessions.</p>
+        <p class="specialty__related">Related concerns: <a href="/anxiety" class="text-link-light">Anxiety</a> · <a href="/relationship-patterns" class="text-link-light">Relationship Patterns</a></p>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .interior-hero {
+    padding-top: calc(var(--section-pad) + 72px);
+  }
+
+  .interior-hero__tagline {
+    color: var(--text-muted-light);
+    font-size: var(--body);
+    max-width: 600px;
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+
+  .body-text p {
+    margin-bottom: 24px;
+  }
+
+  .body-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .specialty__section-heading {
+    margin-bottom: 32px;
+  }
+
+  .specialty__related {
+    margin-top: 32px;
+    font-size: var(--body-small);
+    color: var(--text-muted);
+  }
+</style>

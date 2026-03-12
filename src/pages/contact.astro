@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contact | Schedule a Free Consultation | Maren Voss, LMFT"
+  description="Schedule a free 15-minute phone consultation with Maren Voss, LMFT. Oakland office and California telehealth available."
+>
+  <Header slot="header" />
+
+  <!-- Interior Page Hero -->
+  <section class="interior-hero section-dark section">
+    <div class="container">
+      <h1 class="heading-page">Get in Touch</h1>
+      <p class="interior-hero__tagline">The first step is a conversation.</p>
+    </div>
+  </section>
+
+  <!-- Consultation Booking -->
+  <section class="booking section-cream section">
+    <div class="container">
+      <h2 class="heading-section booking__heading">Schedule a Free Consultation</h2>
+      <div class="body-text booking__text">
+        <p>The best way to get started is a free 15-minute phone consultation. We'll talk about what you're looking for, I'll share a bit about how I work, and we'll figure out together if it's a good fit.</p>
+        <p>No preparation needed. No commitment required. Just a conversation.</p>
+      </div>
+
+      <div class="booking__widget-placeholder">
+        <span>SimplePractice booking widget will be embedded here</span>
+      </div>
+
+      <!-- Other Ways to Reach Me -->
+      <h2 class="heading-section contact-info__heading">Other Ways to Reach Me</h2>
+      <div class="contact-grid">
+        <div class="contact-grid__item">
+          <h3 class="heading-sub">Phone</h3>
+          <a href="tel:+15105550173" class="contact-grid__link text-link-light">(510) 555-0173</a>
+        </div>
+        <div class="contact-grid__item">
+          <h3 class="heading-sub">Email</h3>
+          <a href="mailto:maren@marenvosstherapy.com" class="contact-grid__link text-link-light">maren@marenvosstherapy.com</a>
+        </div>
+        <div class="contact-grid__item">
+          <h3 class="heading-sub">Office</h3>
+          <p>5432 College Ave, Suite 204<br />Oakland, CA 94618</p>
+          <p class="contact-grid__detail">Rockridge neighborhood, one block from Rockridge BART</p>
+        </div>
+        <div class="contact-grid__item">
+          <h3 class="heading-sub">In-Person &amp; Telehealth</h3>
+          <p>I see clients in person at my Oakland office and via secure video across California. If you're outside the East Bay, telehealth is a convenient option.</p>
+        </div>
+        <div class="contact-grid__item">
+          <h3 class="heading-sub">Hours</h3>
+          <p>Monday through Thursday, 9am&ndash;6pm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="expect section-dark section">
+    <div class="container">
+      <h2 class="heading-section expect__heading">After you book a consultation, here's what happens:</h2>
+      <div class="body-text expect__content">
+        <p>You'll get a confirmation email with the phone number I'll call you from. At our scheduled time, we'll talk for about 15 minutes. I'll ask what's bringing you to therapy and what you're hoping for. You can ask me anything.</p>
+        <p>If we both feel like it's a good fit, I'll send you intake paperwork through my secure client portal. You'll complete it before our first session. Then we begin.</p>
+        <p>If I'm not the right fit, I'll say so honestly and do my best to point you toward someone who is.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Interior Hero */
+  .interior-hero {
+    padding-top: calc(var(--section-pad) + 72px);
+  }
+
+  .interior-hero__tagline {
+    margin-top: 16px;
+    font-size: var(--body);
+    color: var(--text-muted-light);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* Booking */
+  .booking__heading {
+    margin-bottom: 24px;
+  }
+
+  .booking__text p {
+    margin-bottom: 20px;
+  }
+
+  .booking__text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .booking__widget-placeholder {
+    margin-top: 48px;
+    margin-bottom: 80px;
+    border: 1px solid var(--text-muted);
+    padding: 48px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 760px;
+  }
+
+  .booking__widget-placeholder span {
+    font-family: var(--font-sans);
+    font-size: var(--body-small);
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* Contact Info */
+  .contact-info__heading {
+    margin-bottom: 40px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 64px;
+    max-width: 760px;
+  }
+
+  .contact-grid__item h3 {
+    margin-bottom: 8px;
+  }
+
+  .contact-grid__item p {
+    font-size: var(--body-small);
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .contact-grid__link {
+    font-size: var(--body-small);
+    line-height: 1.7;
+  }
+
+  .contact-grid__detail {
+    margin-top: 8px;
+    font-size: var(--caption);
+    color: var(--text-muted);
+  }
+
+  /* What to Expect */
+  .expect__heading {
+    margin-bottom: 32px;
+    max-width: 680px;
+  }
+
+  .expect__content p {
+    margin-bottom: 24px;
+  }
+
+  .expect__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

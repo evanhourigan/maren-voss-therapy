@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+
+<BaseLayout
+  title="About Maren Voss | EMDR Therapist in Oakland, CA"
+  description="From tech to therapy. Learn about my background, training, and approach to EMDR, IFS, and somatic therapy for trauma, anxiety, and burnout."
+>
+  <Header slot="header" />
+
+  <!-- Interior Page Hero -->
+  <section class="interior-hero section-dark section">
+    <div class="container">
+      <h1 class="heading-page">About Me</h1>
+      <p class="interior-hero__tagline">A tech career, a breakdown (or a breakthrough), and a completely different life.</p>
+    </div>
+  </section>
+
+  <!-- The Story -->
+  <section class="story section-cream section">
+    <div class="container">
+      <div class="body-text story__content">
+        <p>I didn\u2019t set out to be a therapist.</p>
+        <p>For six years I worked as a UX researcher at a mid-size tech company in the South Bay. I studied how people interact with systems. I ran user interviews, synthesized behavioral data, and helped design products that made sense to the people using them. I was good at my job.</p>
+        <p>I was also slowly falling apart.</p>
+        <p>The culture rewarded performance over personhood. I was sleeping four hours a night and calling it discipline. I was white-knuckling through panic attacks before stakeholder meetings and telling no one. From the outside, I looked like someone who had it figured out. From the inside, I was running on fumes and knew it.</p>
+        <p>I started therapy at 28. It was the first time anyone had asked me what I actually felt rather than what I thought I should feel. That question changed the direction of my life.</p>
+        <p>Two years later I left tech and enrolled at CIIS, the California Institute of Integral Studies in San Francisco, to study counseling psychology with a concentration in somatic approaches. My colleagues thought I was having a breakdown. I think I was finally being honest.</p>
+        <p>After graduating, I spent two years at a community mental health clinic in East Oakland. Crisis work. Complex trauma. People dealing with poverty, violence, and systemic harm. It was the hardest and most important work I\u2019ve ever done. It humbled me. It also gave me a clinical foundation I couldn\u2019t have gotten anywhere else. I learned to stay steady in the room when things got heavy. I learned that healing isn\u2019t linear and that people are more resilient than they know.</p>
+        <p>I started my private practice in 2018. Today most of my clients are some version of who I used to be: accomplished, anxious, running on fumes, and ready to figure out why.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outside the Office -->
+  <section class="outside section-dark section">
+    <div class="container">
+      <div class="body-text outside__content">
+        <p>I run trails. Redwood Regional, Joaquin Miller, Tilden. Not as a wellness practice. It\u2019s how I stay sane.</p>
+        <p>I live in Oakland with my partner and a deeply opinionated rescue mutt named Hank. I read more fiction than self-help. I cook elaborate meals and never follow the recipe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Training -->
+  <section class="credentials section-cream section">
+    <div class="container">
+      <h2 class="heading-section credentials__heading">Education &amp; Training</h2>
+
+      <div class="credentials__grid">
+        <div class="credentials__column">
+          <h3 class="heading-sub credentials__sub-heading">Education</h3>
+          <ul class="credentials__list">
+            <li>MA, Counseling Psychology (Somatic Concentration), California Institute of Integral Studies (CIIS), San Francisco</li>
+            <li>BA, Psychology, University of California, Santa Cruz</li>
+          </ul>
+
+          <h3 class="heading-sub credentials__sub-heading">License</h3>
+          <ul class="credentials__list">
+            <li>Licensed Marriage and Family Therapist (LMFT), State of California</li>
+          </ul>
+        </div>
+
+        <div class="credentials__column">
+          <h3 class="heading-sub credentials__sub-heading">Advanced Training &amp; Certifications</h3>
+          <ul class="credentials__list">
+            <li>EMDRIA Certified EMDR Therapist</li>
+            <li>IFS Level 1 Training, IFS Institute</li>
+            <li>IFS Level 2 Training: Anxiety, Depression, and Shame, IFS Institute</li>
+            <li>Hakomi Essentials Training</li>
+          </ul>
+
+          <h3 class="heading-sub credentials__sub-heading">Professional Affiliations</h3>
+          <ul class="credentials__list">
+            <li>EMDRIA (EMDR International Association)</li>
+            <li>CAMFT (California Association of Marriage and Family Therapists)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection
+    headline="Want to work together?"
+    body="The first step is a brief phone consultation. We\u2019ll talk about what\u2019s bringing you to therapy and whether my approach is a good fit."
+  />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Interior Hero */
+  .interior-hero {
+    padding-top: calc(var(--section-pad) + 72px);
+  }
+
+  .interior-hero__tagline {
+    margin-top: 16px;
+    font-size: var(--body);
+    color: var(--text-muted-light);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* Story */
+  .story__content p {
+    margin-bottom: 24px;
+  }
+
+  .story__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Outside the Office */
+  .outside__content p {
+    margin-bottom: 24px;
+  }
+
+  .outside__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Credentials */
+  .credentials__heading {
+    margin-bottom: 56px;
+  }
+
+  .credentials__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .credentials__sub-heading {
+    margin-bottom: 16px;
+  }
+
+  .credentials__list {
+    list-style: none;
+    margin-bottom: 40px;
+  }
+
+  .credentials__list:last-child {
+    margin-bottom: 0;
+  }
+
+  .credentials__list li {
+    font-size: var(--body-small);
+    line-height: 1.7;
+    color: var(--text-muted);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .credentials__list li::before {
+    content: '\2013';
+    position: absolute;
+    left: 0;
+  }
+
+  .credentials__list li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1023px) {
+    .credentials__grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+</style>

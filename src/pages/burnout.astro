@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+
+<BaseLayout
+  title="Burnout Therapist in the Bay Area | Therapy for High Achievers"
+  description="Therapy for burnout and high-achiever stress. I understand the pattern from the inside. EMDR and IFS to address the root, not just the symptoms."
+>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="interior-hero section-dark section">
+    <div class="container">
+      <h1 class="heading-page">Burnout & High-Achiever Stress</h1>
+      <p class="interior-hero__tagline">You've optimized everything except the part that matters.</p>
+    </div>
+  </section>
+
+  <!-- You Might Be Here If... -->
+  <section class="section-cream section">
+    <div class="container">
+      <div class="body-text">
+        <p>From the outside, your life looks enviable. Good job. Good income. Good reputation. People come to you for advice. You're the one who holds things together.</p>
+        <p>From the inside, you're running on empty. You can't remember the last time you did something because you wanted to rather than because you should. You're successful by every external measure and you feel hollow. Or numb. Or angry in a way that doesn't have a clear target.</p>
+        <p>You might be in tech, medicine, law, academia, or running your own company. The specific industry doesn't matter as much as the pattern: you learned early that your value comes from what you produce, and you've been producing at an unsustainable pace for so long that you've forgotten what you actually want.</p>
+        <p>The weekends don't recharge you. Vacations help for about two days before the dread creeps back. You've tried setting better boundaries and it didn't stick because the problem isn't your boundaries. It's the part of you that believes rest has to be earned, and you haven't earned it yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Work With This -->
+  <section class="section-dark section">
+    <div class="container">
+      <h2 class="heading-section specialty__section-heading">How I Work With This</h2>
+      <div class="body-text">
+        <p>I don't treat burnout with productivity tips or work-life balance frameworks. I treat it as what it actually is: a signal that the way you've been living is no longer sustainable, and probably never was.</p>
+        <p>I came to this work from personal experience. Before I was a therapist, I spent six years in tech. I know what it feels like to have your identity welded to your performance. I know the specific flavor of emptiness that comes from being successful at something that doesn't matter to you. I know how the culture rewards the people who burn brightest and then discards them quietly when they burn out.</p>
+        <p>The therapy work goes deeper than stress management. Using EMDR, we often discover that the drive to perform is connected to much earlier experiences: a childhood where love was conditional on achievement, a family system where being needed was the only way to feel safe, a formative experience that taught you that rest equals vulnerability and vulnerability equals danger.</p>
+        <p>IFS helps us find the part of you that's driving the bus. The achiever, the performer, the one who says "just a little more and then you can rest." That part isn't your enemy. It's been protecting you for a very long time. But it's exhausted, and it's running a program that was written for a different chapter of your life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Can Expect -->
+  <section class="section-cream section">
+    <div class="container">
+      <h2 class="heading-section specialty__section-heading">What You Can Expect</h2>
+      <div class="body-text">
+        <p>This isn't a quick fix, and I'll be honest about that. Burnout develops over years and unwinding it takes more than a few sessions. But most of my clients notice a shift in how they relate to work and rest within the first two months.</p>
+        <p>We start by understanding the pattern: what's driving you, what you're afraid would happen if you stopped, and what your body has been trying to tell you. From there, we use EMDR to process the underlying experiences and beliefs that keep the cycle going.</p>
+        <p>The goal isn't to make you less ambitious. It's to help you build a life where your ambition serves you instead of consuming you. Some of my clients end up making big external changes. Others keep the same job but relate to it completely differently. Both outcomes are valid.</p>
+        <p class="specialty__related">Related concerns: <a href="/anxiety" class="text-link-light">Anxiety</a> · <a href="/life-transitions" class="text-link-light">Life Transitions</a></p>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .interior-hero {
+    padding-top: calc(var(--section-pad) + 72px);
+  }
+
+  .interior-hero__tagline {
+    color: var(--text-muted-light);
+    font-size: var(--body);
+    max-width: 600px;
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+
+  .body-text p {
+    margin-bottom: 24px;
+  }
+
+  .body-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .specialty__section-heading {
+    margin-bottom: 32px;
+  }
+
+  .specialty__related {
+    margin-top: 32px;
+    font-size: var(--body-small);
+    color: var(--text-muted);
+  }
+</style>

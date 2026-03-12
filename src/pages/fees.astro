@@ -1,0 +1,359 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+const faqs = [
+  {
+    question: 'How is EMDR different from talk therapy?',
+    answer: 'Talk therapy helps you understand your experiences through conversation. EMDR goes a step further: it helps your brain reprocess those experiences so they lose their emotional charge. Many of my clients have spent years in talk therapy and found it helpful to a point. EMDR often reaches what talking alone can\u2019t.',
+  },
+  {
+    question: 'How long does therapy take?',
+    answer: 'It depends on what we\u2019re working on. Some clients come for focused EMDR work on a specific issue and complete treatment in 10\u201315 sessions. Others with more complex concerns, such as developmental trauma or longstanding relational patterns, work with me for six months to a year or longer. I\u2019ll give you an honest assessment after our first few sessions. I don\u2019t believe in therapy lasting forever. I want you to not need me.',
+  },
+  {
+    question: 'How often do we meet?',
+    answer: 'I typically see clients weekly. For active EMDR processing, I sometimes recommend twice a week to maintain momentum. As things stabilize, some clients move to every other week before wrapping up.',
+  },
+  {
+    question: 'What happens in the first session?',
+    answer: 'We talk about what brought you here, your history, and what you\u2019re hoping to get from therapy. I\u2019ll explain how I work and we\u2019ll start figuring out if we\u2019re a good match. No EMDR in the first session. We build a foundation first.',
+  },
+  {
+    question: 'Do I have to talk about my trauma in detail?',
+    answer: 'No. In fact, one of the advantages of EMDR is that you don\u2019t need to give a detailed narrative of what happened. I need to know enough to guide the work, but you don\u2019t need to relive the story in order to heal from it.',
+  },
+  {
+    question: 'What if I\u2019m not sure EMDR is right for me?',
+    answer: 'That\u2019s a good thing to bring up in the consultation. Not everyone needs EMDR, and I\u2019ll be straightforward about whether I think it\u2019s the right fit. I use multiple modalities and will tailor the approach to you.',
+  },
+  {
+    question: 'What\u2019s the difference between being "EMDR trained" and "EMDRIA Certified"?',
+    answer: 'Basic EMDR training is a 40\u201350 hour program. EMDRIA Certification requires an additional 20 hours of consultation with an approved consultant, documentation of clinical cases, and adherence to a professional standard of practice. It indicates a deeper level of skill and experience with the protocol.',
+  },
+  {
+    question: 'What if I cry?',
+    answer: 'Then you cry. It\u2019s therapy. I have tissues, I have water, and I won\u2019t be uncomfortable. Tears are information, not a problem.',
+  },
+];
+---
+
+<BaseLayout
+  title="Fees & FAQ | Maren Voss Therapy | Oakland, CA"
+  description="Session fees, insurance information, sliding scale, and answers to common questions about EMDR therapy, session frequency, and what to expect."
+>
+  <Header slot="header" />
+
+  <!-- Interior Page Hero -->
+  <section class="interior-hero section-dark section">
+    <div class="container">
+      <h1 class="heading-page">Fees &amp; FAQ</h1>
+      <p class="interior-hero__tagline">I believe in transparency. Here's everything you need to know before we start.</p>
+    </div>
+  </section>
+
+  <!-- Fees -->
+  <section class="fees section-cream section">
+    <div class="container">
+      <h2 class="heading-section fees__heading">Fees</h2>
+
+      <div class="fee-list">
+        <div class="fee-item">
+          <div class="fee-item__service">Individual therapy session <span class="fee-item__duration">(50 minutes)</span></div>
+          <div class="fee-item__price">$250</div>
+        </div>
+        <div class="fee-item">
+          <div class="fee-item__service">EMDR processing session <span class="fee-item__duration">(60&ndash;75 minutes)</span></div>
+          <div class="fee-item__price">$300</div>
+        </div>
+        <div class="fee-item fee-item--consultation">
+          <div class="fee-item__service">Free phone consultation <span class="fee-item__duration">(15 minutes)</span></div>
+          <div class="fee-item__price">No charge</div>
+        </div>
+        <p class="fee-item__note">This is a chance for us to talk about what you're looking for and whether my approach is a good fit. No commitment required.</p>
+      </div>
+
+      <!-- Insurance -->
+      <div class="fees-subsection">
+        <h3 class="heading-sub">Insurance</h3>
+        <div class="body-text">
+          <p>I'm an out-of-network provider. I made this decision deliberately. Being out-of-network means I can provide longer sessions when clinically appropriate, choose the best treatment approach without requiring pre-authorization, and keep my full attention on your care rather than insurance paperwork.</p>
+          <p>If you have a PPO plan, you may be able to get reimbursed for a significant portion of our sessions. I provide a superbill (a detailed receipt) after every session that you can submit to your insurance company. Many of my clients are reimbursed 50&ndash;80% of the session fee.</p>
+          <p>To check your benefits, call the number on the back of your insurance card and ask: &ldquo;What is my out-of-network reimbursement rate for outpatient mental health with a Licensed Marriage and Family Therapist?&rdquo;</p>
+        </div>
+      </div>
+
+      <!-- Sliding Scale -->
+      <div class="fees-subsection">
+        <h3 class="heading-sub">Sliding Scale</h3>
+        <div class="body-text">
+          <p>I reserve a limited number of spots on my caseload for clients who need a reduced fee. If cost is a barrier, please ask. I'd rather work with the right client at a lower rate than not work with them at all.</p>
+        </div>
+      </div>
+
+      <!-- Payment -->
+      <div class="fees-subsection">
+        <h3 class="heading-sub">Payment</h3>
+        <div class="body-text">
+          <p>Payment is collected at the time of each session via credit card on file. I accept all major credit cards, HSA cards, and FSA cards. Payment is processed through SimplePractice, my secure practice management system.</p>
+        </div>
+      </div>
+
+      <!-- Cancellation Policy -->
+      <div class="fees-subsection">
+        <h3 class="heading-sub">Cancellation Policy</h3>
+        <div class="body-text">
+          <p>I require 48 hours notice for cancellations. Late cancellations and no-shows are charged the full session fee. I know this feels strict. It exists so I can offer that slot to someone on the waitlist who needs it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq section-dark section">
+    <div class="container">
+      <h2 class="heading-section faq__heading">Frequently Asked Questions</h2>
+
+      <div class="accordion">
+        {faqs.map((faq, i) => (
+          <div class="accordion__item" data-accordion-item>
+            <button
+              class="accordion__trigger"
+              aria-expanded="false"
+              aria-controls={`faq-panel-${i}`}
+              id={`faq-trigger-${i}`}
+            >
+              <span class="accordion__question">{faq.question}</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div
+              class="accordion__panel"
+              id={`faq-panel-${i}`}
+              role="region"
+              aria-labelledby={`faq-trigger-${i}`}
+            >
+              <p class="accordion__answer">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection
+    headline="Still have questions?"
+    body="A brief phone conversation is the best way to get them answered."
+  />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Interior Hero */
+  .interior-hero {
+    padding-top: calc(var(--section-pad) + 72px);
+  }
+
+  .interior-hero__tagline {
+    margin-top: 16px;
+    font-size: var(--body);
+    color: var(--text-muted-light);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* Fees */
+  .fees__heading {
+    margin-bottom: 48px;
+  }
+
+  .fee-list {
+    max-width: 680px;
+    margin-bottom: 64px;
+  }
+
+  .fee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .fee-item:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .fee-item__service {
+    font-family: var(--font-sans);
+    font-size: var(--body);
+    font-weight: 500;
+  }
+
+  .fee-item__duration {
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .fee-item__price {
+    font-family: var(--font-sans);
+    font-size: var(--body);
+    font-weight: 500;
+    color: var(--terracotta);
+    flex-shrink: 0;
+    margin-left: 24px;
+  }
+
+  .fee-item__note {
+    margin-top: 12px;
+    font-size: var(--body-small);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  /* Fee Subsections */
+  .fees-subsection {
+    margin-bottom: 48px;
+  }
+
+  .fees-subsection:last-child {
+    margin-bottom: 0;
+  }
+
+  .fees-subsection h3 {
+    margin-bottom: 16px;
+  }
+
+  .fees-subsection p {
+    margin-bottom: 20px;
+  }
+
+  .fees-subsection p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* FAQ */
+  .faq__heading {
+    margin-bottom: 56px;
+  }
+
+  .accordion {
+    max-width: 760px;
+  }
+
+  .accordion__item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .accordion__trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 24px 0;
+    text-align: left;
+    color: var(--text-light);
+    gap: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
+  }
+
+  .accordion__question {
+    font-family: var(--font-sans);
+    font-size: var(--body);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .accordion__icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .accordion__icon::before,
+  .accordion__icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--terracotta);
+    transition: transform 300ms ease;
+  }
+
+  .accordion__icon::before {
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .accordion__icon::after {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    transform: translateX(-50%);
+  }
+
+  .accordion__trigger[aria-expanded='true'] .accordion__icon::after {
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .accordion__panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease;
+  }
+
+  .accordion__answer {
+    padding-bottom: 24px;
+    font-size: var(--body-small);
+    color: var(--text-muted-light);
+    line-height: 1.7;
+    max-width: 680px;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .fee-item {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .fee-item__price {
+      margin-left: 0;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('[data-accordion-item]').forEach((item) => {
+    const trigger = item.querySelector('.accordion__trigger');
+    const panel = item.querySelector('.accordion__panel') as HTMLElement;
+
+    trigger?.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      // Close all panels
+      document.querySelectorAll('[data-accordion-item]').forEach((other) => {
+        const otherTrigger = other.querySelector('.accordion__trigger');
+        const otherPanel = other.querySelector('.accordion__panel') as HTMLElement;
+        otherTrigger?.setAttribute('aria-expanded', 'false');
+        if (otherPanel) otherPanel.style.maxHeight = '';
+      });
+
+      // Open clicked panel if it was closed
+      if (!isOpen) {
+        trigger.setAttribute('aria-expanded', 'true');
+        if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
