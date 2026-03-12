@@ -1,0 +1,77 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  postTitle: string;
+  date: string;
+}
+
+const { title, description, postTitle, date } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <!-- Interior Hero -->
+  <section class="interior-hero section-dark section">
+    <div class="container">
+      <h1 class="heading-page">{postTitle}</h1>
+      <p class="interior-hero__date">{date}</p>
+    </div>
+  </section>
+
+  <!-- Article -->
+  <section class="article-section section-cream section">
+    <div class="container">
+      <article class="body-text article__content">
+        <slot />
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Interior Hero */
+  .interior-hero {
+    padding-top: calc(var(--section-pad) + 72px);
+  }
+
+  .interior-hero__date {
+    margin-top: 16px;
+    font-size: var(--caption);
+    color: var(--text-muted-light);
+    line-height: 1.7;
+  }
+
+  /* Article */
+  .article__content {
+    max-width: 680px;
+  }
+
+  .article__content :global(p) {
+    margin-bottom: 24px;
+  }
+
+  .article__content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .article__content :global(strong) {
+    font-weight: 500;
+  }
+
+  .article__content :global(a) {
+    color: var(--terracotta);
+    text-decoration: underline;
+  }
+</style>

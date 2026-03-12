@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = [
+  {
+    title: 'What EMDR Actually Looks Like',
+    date: 'January 2026',
+    excerpt: 'Most people have heard of EMDR by now. They\'ve seen it referenced on social media or heard a friend describe following a light with their eyes. And they have questions. Reasonable ones.',
+    href: '/blog/what-emdr-actually-looks-like',
+  },
+  {
+    title: 'When Therapy Stops Working',
+    date: 'November 2025',
+    excerpt: 'You\'ve been in therapy for a while. It helped. You understand yourself better. You have language for your patterns, your attachment style, your family dynamics. And yet.',
+    href: '/blog/when-therapy-stops-working',
+  },
+  {
+    title: 'Burnout Is Not Depression (But They Look a Lot Alike)',
+    date: 'September 2025',
+    excerpt: 'A client sits across from me and says: "My doctor wants to put me on antidepressants. I think I might be depressed. But I\'m not sure that\'s what this is."',
+    href: '/blog/burnout-is-not-depression',
+  },
+];
+---
+
+<BaseLayout
+  title="Writing | Maren Voss, LMFT"
+  description="Thoughts on therapy, trauma, EMDR, burnout, and what it means to do the work. By Maren Voss, LMFT in Oakland, CA."
+>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="interior-hero section-dark section">
+    <div class="container">
+      <h1 class="heading-page">Writing</h1>
+      <p class="interior-hero__tagline">Thoughts on therapy, trauma, and what it means to do the work.</p>
+    </div>
+  </section>
+
+  <!-- Blog List -->
+  <section class="blog-list section-cream section">
+    <div class="container">
+      <div class="blog-list__posts">
+        {posts.map((post) => (
+          <article class="blog-card">
+            <a href={post.href} class="blog-card__link">
+              <h2 class="blog-card__title">{post.title}</h2>
+              <time class="blog-card__date">{post.date}</time>
+              <p class="blog-card__excerpt">{post.excerpt}</p>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .interior-hero {
+    padding-top: calc(var(--section-pad) + 72px);
+  }
+
+  .interior-hero__tagline {
+    color: var(--text-muted-light);
+    font-size: var(--body);
+    max-width: 600px;
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+
+  .blog-list__posts {
+    max-width: 720px;
+  }
+
+  .blog-card {
+    padding: 48px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .blog-card:first-child {
+    padding-top: 0;
+  }
+
+  .blog-card:last-child {
+    border-bottom: none;
+  }
+
+  .blog-card__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-card__link:hover .blog-card__title {
+    color: var(--terracotta);
+  }
+
+  .blog-card__title {
+    font-family: var(--font-serif);
+    font-size: var(--subsection-heading);
+    line-height: 1.3;
+    transition: color 200ms ease;
+    margin-bottom: 8px;
+  }
+
+  .blog-card__date {
+    display: block;
+    font-size: var(--caption);
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+
+  .blog-card__excerpt {
+    font-size: var(--body-small);
+    color: var(--text-muted);
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

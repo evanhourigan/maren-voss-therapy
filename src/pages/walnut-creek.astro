@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+
+<BaseLayout
+  title="Therapist Near Walnut Creek, CA | EMDR | Maren Voss, LMFT"
+  description="Oakland-based EMDR therapist serving Walnut Creek and Contra Costa County. In-person and telehealth. Trauma, anxiety, burnout."
+>
+  <Header slot="header" />
+
+  <section class="interior-hero section-dark section">
+    <div class="container">
+      <h1 class="heading-page">Therapist Near Walnut Creek</h1>
+      <p class="interior-hero__tagline">Oakland-based therapist serving the greater East Bay.</p>
+    </div>
+  </section>
+
+  <section class="section-cream section">
+    <div class="container">
+      <div class="body-text">
+        <p>If you're in Walnut Creek, Concord, Lafayette, or elsewhere in Contra Costa County, my Rockridge office is a 15-20 minute drive down Highway 24, and telehealth makes distance a non-issue for ongoing sessions.</p>
+        <p>I work with several clients from the Walnut Creek area who are drawn to a more specialized approach than what's readily available in the suburbs. If you've been looking for an EMDR-certified therapist, someone who specializes in burnout or trauma beyond what most generalists offer, or simply a therapist whose style is more direct and active than what you've experienced before, we might be a good fit.</p>
+        <p>Many of my Contra Costa clients are dual-income professionals managing high-pressure careers alongside family life. They've been holding it together for a long time and they're ready to stop performing okay and start actually feeling it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark section">
+    <div class="container">
+      <div class="body-text">
+        <p>I specialize in <a href="/trauma-ptsd" class="text-link-dark">trauma & PTSD</a>, <a href="/anxiety" class="text-link-dark">anxiety</a>, <a href="/burnout" class="text-link-dark">burnout and high-achiever stress</a>, <a href="/relationship-patterns" class="text-link-dark">relationship patterns</a>, and <a href="/life-transitions" class="text-link-dark">life transitions</a>. My approach integrates EMDR, IFS, and somatic therapy.</p>
+        <p><a href="/how-i-work" class="text-link-dark">Learn more about how I work &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cream section">
+    <div class="container">
+      <div class="geo-info">
+        <div class="geo-info__item">
+          <h2 class="heading-sub">Office</h2>
+          <p>5432 College Ave, Suite 204, Oakland, CA 94618</p>
+        </div>
+        <div class="geo-info__item">
+          <h2 class="heading-sub">From Walnut Creek</h2>
+          <p>15-20 minutes via Highway 24</p>
+        </div>
+        <div class="geo-info__item">
+          <h2 class="heading-sub">Telehealth</h2>
+          <p>Available for all California residents. Many Contra Costa clients do a mix of in-person and video sessions.</p>
+        </div>
+        <div class="geo-info__item">
+          <h2 class="heading-sub">Getting Started</h2>
+          <p><a href="/contact" class="text-link-light">Schedule a free 15-minute consultation &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .interior-hero {
+    padding-top: calc(var(--section-pad) + 72px);
+  }
+
+  .interior-hero__tagline {
+    color: var(--text-muted-light);
+    font-size: var(--body);
+    max-width: 600px;
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+
+  .body-text p {
+    margin-bottom: 24px;
+  }
+
+  .body-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .geo-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 64px;
+    max-width: 760px;
+  }
+
+  .geo-info__item h2 {
+    margin-bottom: 8px;
+  }
+
+  .geo-info__item p {
+    font-size: var(--body-small);
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 767px) {
+    .geo-info {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
