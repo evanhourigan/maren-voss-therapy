@@ -91,25 +91,16 @@ const specialties = [
         <a href="/how-i-work" class="text-link-light approach-preview__cta">Learn About My Approach &rarr;</a>
       </div>
       <div class="approach-preview__image" aria-label="Therapy office placeholder">
-        <span class="placeholder-block placeholder-block--landscape">OFFICE</span>
+        <span class="placeholder-block placeholder-block--landscape"><em>Office photography</em></span>
       </div>
     </div>
   </section>
-
-  <!-- Landscape Breather -->
-  <div class="landscape-breather">
-    <blockquote class="landscape-breather__quote">
-      <span class="landscape-breather__mark" aria-hidden="true">&ldquo;</span>
-      I'd done talk therapy for years. The EMDR work with Maren got to things in three months that I couldn't reach in five years of talking.
-      <cite class="landscape-breather__cite">&mdash; Client, 2024</cite>
-    </blockquote>
-  </div>
 
   <!-- About Preview -->
   <section class="about-preview section-dark section">
     <div class="container about-preview__layout">
       <div class="about-preview__image" aria-label="Therapist portrait placeholder">
-        <span class="placeholder-block placeholder-block--portrait placeholder-block--styled"><em>Portrait</em></span>
+        <span class="placeholder-block placeholder-block--portrait"><em>Client headshot</em></span>
       </div>
       <div class="about-preview__text fade-in-up">
         <h2 class="heading-section">A different kind of background</h2>
@@ -122,17 +113,14 @@ const specialties = [
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="testimonial section-cream section">
-    <div class="testimonial__bg" aria-hidden="true"></div>
-    <div class="container testimonial__inner">
-      <span class="testimonial__quote" aria-hidden="true">&ldquo;</span>
-      <blockquote class="testimonial__text scale-in">
-        I'd done talk therapy for years. The EMDR work with Maren got to things in three months that I couldn't reach in five years of talking.
-      </blockquote>
-      <cite class="testimonial__attribution">&mdash; Client, 2024</cite>
-    </div>
-  </section>
+  <!-- Testimonial Breather -->
+  <div class="landscape-breather">
+    <blockquote class="landscape-breather__quote">
+      <span class="landscape-breather__mark" aria-hidden="true">&ldquo;</span>
+      I'd done talk therapy for years. The EMDR work with Maren got to things in three months that I couldn't reach in five years of talking.
+      <cite class="landscape-breather__cite">&mdash; Client, 2024</cite>
+    </blockquote>
+  </div>
 
   <!-- CTA -->
   <CtaSection />
@@ -263,11 +251,11 @@ const specialties = [
     align-items: center;
     justify-content: center;
     background-color: var(--warm-charcoal);
-    color: var(--text-muted-light);
+    border: 1px solid var(--text-muted);
+    color: var(--warm-cream);
     font-family: var(--font-sans);
-    font-size: var(--caption);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 14px;
+    font-style: italic;
     width: 100%;
   }
 
@@ -277,20 +265,6 @@ const specialties = [
 
   .placeholder-block--landscape {
     aspect-ratio: 16 / 9;
-  }
-
-  .placeholder-block--styled {
-    background-color: var(--warm-charcoal);
-    color: var(--warm-cream);
-    font-style: italic;
-    letter-spacing: 0.02em;
-    text-transform: none;
-    font-size: var(--body-small);
-  }
-
-  .section-cream .placeholder-block {
-    background-color: #d5cfc8;
-    color: #5a5450;
   }
 
   /* Landscape Breather */
@@ -351,51 +325,6 @@ const specialties = [
     }
   }
 
-  /* Testimonial */
-  .testimonial {
-    position: relative;
-  }
-
-  .testimonial__bg {
-    position: absolute;
-    inset: 0;
-    background: url('/images/texture-redwood-bark.webp') center / cover no-repeat;
-    opacity: 0.06;
-  }
-
-  .testimonial__inner {
-    text-align: center;
-    max-width: var(--content-width);
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .testimonial__quote {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 120px;
-    line-height: 1;
-    color: var(--terracotta);
-    margin-bottom: -24px;
-  }
-
-  .testimonial__text {
-    font-family: var(--font-serif);
-    font-size: clamp(1.5rem, 2.5vw, 1.75rem);
-    line-height: 1.5;
-    color: var(--text-dark);
-    font-style: normal;
-  }
-
-  .testimonial__attribution {
-    display: block;
-    margin-top: 24px;
-    font-family: var(--font-sans);
-    font-size: var(--body-small);
-    font-style: normal;
-    color: var(--text-muted);
-  }
-
   /* Responsive */
   @media (max-width: 1023px) {
     .specialties__grid {
@@ -411,10 +340,6 @@ const specialties = [
     .approach-preview__image {
       order: -1;
     }
-
-    .testimonial__quote {
-      font-size: 100px;
-    }
   }
 
   @media (max-width: 767px) {
@@ -425,10 +350,6 @@ const specialties = [
 
     .about-preview__image {
       max-width: 320px;
-    }
-
-    .testimonial__quote {
-      font-size: 80px;
     }
 
     .landscape-breather {
