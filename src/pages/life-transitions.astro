@@ -60,6 +60,20 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
+  .interior-hero {
+    position: relative;
+    background: url('/images/textures/life-transitions-hero.webp') center / cover no-repeat;
+  }
+  .interior-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(26, 26, 26, 0.91);
+  }
+  .interior-hero .container {
+    position: relative;
+  }
+
   .body-text p {
     margin-bottom: 24px;
   }

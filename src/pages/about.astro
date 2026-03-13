@@ -27,6 +27,7 @@ import CtaSection from '../components/CtaSection.astro';
         <p>For six years I worked as a UX researcher at a mid-size tech company in the South Bay. I studied how people interact with systems. I ran user interviews, synthesized behavioral data, and helped design products that made sense to the people using them. I was good at my job.</p>
         <p>I was also slowly falling apart.</p>
         <p>The culture rewarded performance over personhood. I was sleeping four hours a night and calling it discipline. I was white-knuckling through panic attacks before stakeholder meetings and telling no one. From the outside, I looked like someone who had it figured out. From the inside, I was running on fumes and knew it.</p>
+        <img src="/images/about-trail-walk.webp" alt="A person walking among towering redwood trees" class="about__environmental-photo" />
         <p>I started therapy at 28. It was the first time anyone had asked me what I actually felt rather than what I thought I should feel. That question changed the direction of my life.</p>
         <p>Two years later I left tech and enrolled at CIIS, the California Institute of Integral Studies in San Francisco, to study counseling psychology with a concentration in somatic approaches. My colleagues thought I was having a breakdown. I think I was finally being honest.</p>
         <p>After graduating, I spent two years at a community mental health clinic in East Oakland. Crisis work. Complex trauma. People dealing with poverty, violence, and systemic harm. It was the hardest and most important work I've ever done. It humbled me. It also gave me a clinical foundation I couldn't have gotten anywhere else. I learned to stay steady in the room when things got heavy. I learned that healing isn't linear and that people are more resilient than they know.</p>
@@ -154,6 +155,25 @@ import CtaSection from '../components/CtaSection.astro';
 
   .credentials__list li:last-child {
     margin-bottom: 0;
+  }
+
+  /* Environmental Photo */
+  .about__environmental-photo {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    margin: 40px 0;
+    float: right;
+    margin-left: 40px;
+  }
+
+  @media (max-width: 767px) {
+    .about__environmental-photo {
+      float: none;
+      max-width: 100%;
+      margin-left: 0;
+    }
   }
 
   /* Responsive */

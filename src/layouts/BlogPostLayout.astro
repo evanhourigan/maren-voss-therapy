@@ -9,16 +9,18 @@ interface Props {
   description: string;
   postTitle: string;
   date: string;
+  heroTexture?: string;
 }
 
-const { title, description, postTitle, date } = Astro.props;
+const { title, description, postTitle, date, heroTexture } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
   <Header slot="header" />
 
   <!-- Interior Hero -->
-  <section class="interior-hero section-dark section">
+  <section class="interior-hero section-dark section" style={heroTexture ? `background: url(${heroTexture}) center / cover no-repeat;` : undefined}>
+    {heroTexture && <div class="interior-hero__overlay" aria-hidden="true"></div>}
     <div class="container">
       <h1 class="heading-page">{postTitle}</h1>
       <p class="interior-hero__date">{date}</p>
@@ -41,11 +43,25 @@ const { title, description, postTitle, date } = Astro.props;
 </BaseLayout>
 
 <style>
+  .interior-hero {
+    position: relative;
+  }
+  .interior-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(26, 26, 26, 0.91);
+  }
+  .interior-hero .container {
+    position: relative;
+  }
   .interior-hero__date {
     margin-top: 16px;
     font-size: var(--caption);
     color: var(--text-muted-light);
     line-height: 1.7;
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Article */

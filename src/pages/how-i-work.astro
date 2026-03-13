@@ -30,6 +30,9 @@ import CtaSection from '../components/CtaSection.astro';
     </div>
   </section>
 
+  <!-- Environment Break 1 -->
+  <div class="environment-break environment-break--1" role="img" aria-label="Mist rising from a still lake at dawn"></div>
+
   <!-- EMDR -->
   <section class="emdr section-dark section">
     <div class="container">
@@ -45,6 +48,9 @@ import CtaSection from '../components/CtaSection.astro';
     </div>
   </section>
 
+  <!-- Environment Break 2 -->
+  <div class="environment-break environment-break--2" role="img" aria-label="Sunlight filtering through a redwood canopy"></div>
+
   <!-- IFS -->
   <section class="ifs section-cream section">
     <div class="container">
@@ -58,6 +64,9 @@ import CtaSection from '../components/CtaSection.astro';
     </div>
   </section>
 
+  <!-- Environment Break 3 -->
+  <div class="environment-break environment-break--3" role="img" aria-label="Soft green moss growing on weathered stone"></div>
+
   <!-- Somatic -->
   <section class="somatic section-dark section">
     <div class="container">
@@ -70,6 +79,9 @@ import CtaSection from '../components/CtaSection.astro';
       </div>
     </div>
   </section>
+
+  <!-- Environment Break 4 -->
+  <div class="environment-break environment-break--4" role="img" aria-label="A door slightly ajar with warm light spilling through"></div>
 
   <!-- What a Session Looks Like -->
   <section class="session section-cream section">
@@ -159,6 +171,33 @@ import CtaSection from '../components/CtaSection.astro';
 
   .session__content p:last-child {
     margin-bottom: 0;
+  }
+
+  /* Environment Break */
+  .environment-break {
+    width: 100%;
+    height: 350px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .environment-break::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(26, 26, 26, 0.7);
+  }
+  .environment-break--1 { background-image: url('/images/how-i-work-1.webp'); }
+  .environment-break--2 { background-image: url('/images/how-i-work-2.webp'); }
+  .environment-break--3 { background-image: url('/images/how-i-work-3.webp'); }
+  .environment-break--4 { background-image: url('/images/how-i-work-4.webp'); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .environment-break { background-attachment: scroll; }
+  }
+  @media (max-width: 767px) {
+    .environment-break { height: 200px; background-attachment: scroll; }
   }
 </style>
 <script src="../scripts/scroll-animations.js"></script>

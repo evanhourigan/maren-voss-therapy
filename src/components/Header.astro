@@ -184,15 +184,25 @@ const navLinks = [
 
   .site-header__dropdown {
     position: absolute;
-    top: calc(100% + 12px);
+    top: 100%;
     left: -16px;
     min-width: 220px;
-    background-color: var(--warm-charcoal);
-    padding: 12px 0;
+    padding-top: 12px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4px);
     transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
+  }
+
+  .site-header__dropdown::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--warm-charcoal);
+    z-index: -1;
   }
 
   .has-dropdown:hover .site-header__dropdown,

@@ -41,6 +41,7 @@ const specialties = [
 
   <!-- Hero -->
   <section class="hero section-dark section--hero">
+    <div class="hero__bg" aria-hidden="true"></div>
     <div class="container">
       <div class="content-column">
         <h1 class="heading-hero hero__headline">You've done the work.<br />It's time to go deeper.</h1>
@@ -65,9 +66,9 @@ const specialties = [
   <section class="specialties section-dark section">
     <div class="container">
       <h2 class="heading-section specialties__heading">What I Treat</h2>
-      <div class="specialties__grid" data-stagger>
+      <div class="specialties__grid fade-in-up">
         {specialties.map((item) => (
-          <div class="specialty-card fade-in-up">
+          <div class="specialty-card">
             <h3 class="specialty-card__title">{item.title}</h3>
             <p class="specialty-card__desc">{item.description}</p>
             <a href={item.href} class="specialty-card__link text-link-dark">Learn more about {item.title} &rarr;</a>
@@ -95,11 +96,20 @@ const specialties = [
     </div>
   </section>
 
+  <!-- Landscape Breather -->
+  <div class="landscape-breather">
+    <blockquote class="landscape-breather__quote">
+      <span class="landscape-breather__mark" aria-hidden="true">&ldquo;</span>
+      I'd done talk therapy for years. The EMDR work with Maren got to things in three months that I couldn't reach in five years of talking.
+      <cite class="landscape-breather__cite">&mdash; Client, 2024</cite>
+    </blockquote>
+  </div>
+
   <!-- About Preview -->
   <section class="about-preview section-dark section">
     <div class="container about-preview__layout">
-      <div class="about-preview__image" aria-label="Headshot placeholder">
-        <span class="placeholder-block placeholder-block--portrait">HEADSHOT</span>
+      <div class="about-preview__image" aria-label="Therapist portrait placeholder">
+        <span class="placeholder-block placeholder-block--portrait placeholder-block--styled"><em>Portrait</em></span>
       </div>
       <div class="about-preview__text fade-in-up">
         <h2 class="heading-section">A different kind of background</h2>
@@ -114,6 +124,7 @@ const specialties = [
 
   <!-- Testimonial -->
   <section class="testimonial section-cream section">
+    <div class="testimonial__bg" aria-hidden="true"></div>
     <div class="container testimonial__inner">
       <span class="testimonial__quote" aria-hidden="true">&ldquo;</span>
       <blockquote class="testimonial__text scale-in">
@@ -133,6 +144,14 @@ const specialties = [
   /* Hero */
   .hero {
     padding-top: calc(var(--hero-pad) + 72px);
+    position: relative;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    background: url('/images/hero-redwood-fog.webp') center / cover no-repeat;
+    opacity: 0.1;
   }
 
   .hero__headline {
@@ -170,14 +189,6 @@ const specialties = [
     gap: 48px 40px;
     max-width: var(--content-width);
     margin: 0 auto;
-  }
-
-  .specialty-card {
-    transition: transform 200ms ease;
-  }
-
-  .specialty-card:hover {
-    transform: translateY(-2px);
   }
 
   .specialty-card__title {
@@ -268,12 +279,90 @@ const specialties = [
     aspect-ratio: 16 / 9;
   }
 
+  .placeholder-block--styled {
+    background-color: var(--warm-charcoal);
+    color: var(--warm-cream);
+    font-style: italic;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: var(--body-small);
+  }
+
   .section-cream .placeholder-block {
     background-color: #d5cfc8;
     color: #5a5450;
   }
 
+  /* Landscape Breather */
+  .landscape-breather {
+    width: 100%;
+    height: 400px;
+    background: url('/images/landscape-hills-fog.webp') center / cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .landscape-breather::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(26, 26, 26, 0.55);
+  }
+
+  .landscape-breather__quote {
+    position: relative;
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 2.5vw, 1.75rem);
+    color: var(--text-light);
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.5;
+    font-style: normal;
+    text-wrap: balance;
+  }
+
+  .landscape-breather__mark {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 90px;
+    line-height: 1;
+    color: var(--warm-cream);
+    opacity: 0.6;
+    margin-bottom: -12px;
+  }
+
+  .landscape-breather__cite {
+    display: block;
+    margin-top: 16px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--warm-cream);
+    opacity: 0.3;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .landscape-breather {
+      background-attachment: scroll;
+    }
+  }
+
   /* Testimonial */
+  .testimonial {
+    position: relative;
+  }
+
+  .testimonial__bg {
+    position: absolute;
+    inset: 0;
+    background: url('/images/texture-redwood-bark.webp') center / cover no-repeat;
+    opacity: 0.06;
+  }
+
   .testimonial__inner {
     text-align: center;
     max-width: var(--content-width);
@@ -340,6 +429,11 @@ const specialties = [
 
     .testimonial__quote {
       font-size: 80px;
+    }
+
+    .landscape-breather {
+      height: 250px;
+      background-attachment: scroll;
     }
   }
 </style>

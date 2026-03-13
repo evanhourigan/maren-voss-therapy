@@ -31,6 +31,34 @@ import Footer from '../components/Footer.astro';
         <span>SimplePractice booking widget will be embedded here</span>
       </div>
 
+      <!-- Contact Form -->
+      <div class="contact-form-section fade-in-up" id="contact-form-section">
+        <h2 class="heading-section contact-form__heading">Not ready to book?</h2>
+        <p class="contact-form__subtext">Send me a message and I'll get back to you within one business day.</p>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="contact-form__field">
+            <label for="contact-name" class="contact-form__label">Name</label>
+            <input type="text" id="contact-name" name="name" class="contact-form__input" />
+            <span class="contact-form__error" id="error-name">Please enter your name.</span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-email" class="contact-form__label">Email</label>
+            <input type="email" id="contact-email" name="email" class="contact-form__input" />
+            <span class="contact-form__error" id="error-email">Please enter a valid email address.</span>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-message" class="contact-form__label">Message</label>
+            <textarea id="contact-message" name="message" rows="4" class="contact-form__input contact-form__textarea"></textarea>
+            <span class="contact-form__error" id="error-message">Please enter a message.</span>
+          </div>
+          <button type="submit" class="btn contact-form__submit" id="contact-submit">Send Message</button>
+        </form>
+        <div class="contact-form__confirmation" id="contact-confirmation">
+          <h2 class="heading-section">Message sent.</h2>
+          <p>Thank you for reaching out. In a real practice, you would hear back within one business day.</p>
+        </div>
+      </div>
+
       <!-- Other Ways to Reach Me -->
       <h2 class="heading-section contact-info__heading">Other Ways to Reach Me</h2>
       <div class="contact-grid">
@@ -142,6 +170,104 @@ import Footer from '../components/Footer.astro';
     color: var(--text-muted);
   }
 
+  /* Contact Form */
+  .contact-form-section {
+    max-width: var(--content-width);
+    margin: 0 auto 80px;
+  }
+
+  .contact-form__heading {
+    margin-bottom: 12px;
+  }
+
+  .contact-form__subtext {
+    font-size: var(--body-small);
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-form__label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--caption);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .contact-form__input {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: var(--font-sans);
+    font-size: var(--body-small);
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--text-muted);
+    transition: border-color 200ms ease;
+  }
+
+  .contact-form__input:focus {
+    outline: none;
+    border-color: var(--terracotta);
+  }
+
+  .contact-form__textarea {
+    resize: vertical;
+  }
+
+  .contact-form__error {
+    display: none;
+    font-family: var(--font-sans);
+    font-size: var(--caption);
+    color: var(--terracotta);
+    margin-top: 6px;
+  }
+
+  .contact-form__field.has-error .contact-form__error {
+    display: block;
+  }
+
+  .contact-form__field.has-error .contact-form__input {
+    border-color: var(--terracotta);
+  }
+
+  .contact-form__submit {
+    align-self: flex-start;
+  }
+
+  .contact-form__submit:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .contact-form__confirmation {
+    display: none;
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+
+  .contact-form__confirmation.is-visible {
+    opacity: 1;
+  }
+
+  .contact-form__confirmation h2 {
+    margin-bottom: 12px;
+  }
+
+  .contact-form__confirmation p {
+    font-size: var(--body-small);
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
   /* What to Expect */
   .expect__heading {
     max-width: var(--content-width);
@@ -176,3 +302,56 @@ import Footer from '../components/Footer.astro';
   }
 </style>
 <script src="../scripts/scroll-animations.js"></script>
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('contact-submit') as HTMLButtonElement;
+  const confirmation = document.getElementById('contact-confirmation') as HTMLElement;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const fields = [
+    { id: 'contact-name', errorId: 'error-name', validate: (v: string) => v.trim().length > 0 },
+    { id: 'contact-email', errorId: 'error-email', validate: (v: string) => emailRegex.test(v.trim()) },
+    { id: 'contact-message', errorId: 'error-message', validate: (v: string) => v.trim().length > 0 },
+  ];
+
+  // Clear error on input
+  fields.forEach(({ id }) => {
+    const input = document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement;
+    input.addEventListener('input', () => {
+      input.closest('.contact-form__field')?.classList.remove('has-error');
+    });
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    fields.forEach(({ id, validate }) => {
+      const input = document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement;
+      const field = input.closest('.contact-form__field') as HTMLElement;
+      if (!validate(input.value)) {
+        field.classList.add('has-error');
+        valid = false;
+      } else {
+        field.classList.remove('has-error');
+      }
+    });
+
+    if (!valid) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending\u2026';
+
+    setTimeout(() => {
+      form.style.transition = 'opacity 400ms ease';
+      form.style.opacity = '0';
+      form.addEventListener('transitionend', () => {
+        form.style.display = 'none';
+        confirmation.style.display = 'block';
+        requestAnimationFrame(() => {
+          confirmation.classList.add('is-visible');
+        });
+      }, { once: true });
+    }, 1500);
+  });
+</script>

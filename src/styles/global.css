@@ -6,7 +6,7 @@
   font-family: 'DM Serif Display';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url('/fonts/dm-serif-display-400.woff2') format('woff2');
 }
 
@@ -14,7 +14,7 @@
   font-family: 'DM Serif Display';
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url('/fonts/dm-serif-display-400i.woff2') format('woff2');
 }
 
@@ -22,7 +22,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url('/fonts/dm-sans-400.woff2') format('woff2');
 }
 
@@ -30,7 +30,7 @@
   font-family: 'DM Sans';
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url('/fonts/dm-sans-400i.woff2') format('woff2');
 }
 
@@ -38,7 +38,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
   src: url('/fonts/dm-sans-500.woff2') format('woff2');
 }
 

@@ -1,33 +1,38 @@
 function initScrollAnimations() {
+  const animated = document.querySelectorAll('.fade-in-up, .scale-in');
+
+  // Immediately reveal elements already in the viewport (no animation)
+  animated.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.style.transition = 'none';
+      el.classList.add('is-visible');
+      // Re-enable transitions after paint
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          el.style.transition = '';
+        });
+      });
+    }
+  });
+
+  // Observe off-screen elements for scroll-triggered animation
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const el = entry.target;
-          if (el.hasAttribute('data-stagger')) {
-            const children = el.querySelectorAll('.fade-in-up');
-            children.forEach((child, i) => {
-              child.style.transitionDelay = `${i * 100}ms`;
-              child.classList.add('is-visible');
-            });
-          } else {
-            el.classList.add('is-visible');
-          }
-          observer.unobserve(el);
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.2 }
   );
 
-  document.querySelectorAll('.fade-in-up, .scale-in').forEach((el) => {
-    if (!el.closest('[data-stagger]')) {
+  animated.forEach((el) => {
+    if (!el.classList.contains('is-visible')) {
       observer.observe(el);
     }
-  });
-
-  document.querySelectorAll('[data-stagger]').forEach((el) => {
-    observer.observe(el);
   });
 }
 
