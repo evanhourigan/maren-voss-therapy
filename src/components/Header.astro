@@ -144,7 +144,7 @@ const navLinks = [
   .site-header__links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 20px;
   }
 
   .site-header__item {
@@ -153,9 +153,9 @@ const navLinks = [
 
   .site-header__link {
     font-family: var(--font-sans);
-    font-size: var(--nav);
+    font-size: 0.875rem;
     font-weight: 500;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--text-light);
     text-decoration: none;
@@ -166,6 +166,7 @@ const navLinks = [
     display: flex;
     align-items: center;
     gap: 4px;
+    white-space: nowrap;
   }
 
   .site-header__link:hover,
@@ -216,9 +217,10 @@ const navLinks = [
   }
 
   .site-header__cta {
-    padding: 10px 24px;
+    padding: 10px 20px;
     font-size: 0.8125rem;
     flex-shrink: 0;
+    margin-left: 12px;
   }
 
   .site-header__hamburger {
@@ -307,7 +309,7 @@ const navLinks = [
     display: inline-block;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     .site-header__links,
     .site-header__cta {
       display: none;
@@ -318,24 +320,9 @@ const navLinks = [
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .mobile-menu {
       display: none;
-    }
-  }
-
-  @media (max-width: 1023px) and (min-width: 768px) {
-    .site-header__links {
-      gap: 18px;
-    }
-
-    .site-header__link {
-      font-size: 0.8125rem;
-    }
-
-    .site-header__cta {
-      padding: 8px 16px;
-      font-size: 0.75rem;
     }
   }
 </style>

@@ -82,7 +82,7 @@
   /* Layout */
   --max-width: 1280px;
   --gutter: 32px;
-  --content-width: 680px;
+  --content-width: 900px;
 
   /* Section Spacing */
   --section-pad: 120px;
@@ -179,18 +179,27 @@ h1, h2, h3, h4, h5, h6 {
   font-size: var(--hero-headline);
   letter-spacing: -0.02em;
   line-height: 1.1;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heading-page {
   font-family: var(--font-serif);
   font-size: var(--page-title);
   line-height: 1.15;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heading-section {
   font-family: var(--font-serif);
   font-size: var(--section-heading);
   line-height: 1.2;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heading-sub {
@@ -205,6 +214,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
+}
+
+.content-column {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ===========================
@@ -268,6 +283,21 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--hero-pad) 0;
 }
 
+/* Interior Hero */
+.interior-hero {
+  padding-top: calc(var(--section-pad) + 72px);
+}
+
+.interior-hero__tagline {
+  margin-top: 16px;
+  font-size: var(--body);
+  color: var(--text-muted-light);
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
 /* ===========================
    Skip Link (Accessibility)
    =========================== */
@@ -285,6 +315,51 @@ h1, h2, h3, h4, h5, h6 {
 
 .skip-link:focus {
   top: 16px;
+}
+
+/* ===========================
+   Scroll Animations
+   =========================== */
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.scale-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .scale-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .parallax-bg {
+    background-attachment: scroll;
+  }
 }
 
 /* ===========================

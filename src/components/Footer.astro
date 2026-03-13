@@ -45,7 +45,8 @@ const currentYear = new Date().getFullYear();
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--gutter);
-    margin-bottom: 48px;
+    max-width: var(--content-width);
+    margin: 0 auto 48px;
   }
 
   .site-footer__name {
@@ -80,6 +81,8 @@ const currentYear = new Date().getFullYear();
     align-items: center;
     padding-top: 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .site-footer__copy,
