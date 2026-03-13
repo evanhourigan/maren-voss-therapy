@@ -28,7 +28,7 @@ const { title, description, postTitle, date } = Astro.props;
   <!-- Article -->
   <section class="article-section section-cream section">
     <div class="container">
-      <article class="body-text article__content">
+      <article class="body-text article__content fade-in-up">
         <slot />
       </article>
     </div>
@@ -41,11 +41,6 @@ const { title, description, postTitle, date } = Astro.props;
 </BaseLayout>
 
 <style>
-  /* Interior Hero */
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
   .interior-hero__date {
     margin-top: 16px;
     font-size: var(--caption);
@@ -55,7 +50,7 @@ const { title, description, postTitle, date } = Astro.props;
 
   /* Article */
   .article__content {
-    max-width: 680px;
+    max-width: var(--content-width);
   }
 
   .article__content :global(p) {
@@ -74,4 +69,15 @@ const { title, description, postTitle, date } = Astro.props;
     color: var(--terracotta);
     text-decoration: underline;
   }
+
+  .article__content :global(.pull-quote) {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    line-height: 1.4;
+    border-left: 3px solid var(--terracotta);
+    padding-left: 24px;
+    margin: 40px 0;
+    color: var(--text-dark);
+  }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

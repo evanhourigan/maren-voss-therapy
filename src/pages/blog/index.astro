@@ -42,7 +42,7 @@ const posts = [
   <!-- Blog List -->
   <section class="blog-list section-cream section">
     <div class="container">
-      <div class="blog-list__posts">
+      <div class="blog-list__posts fade-in-up">
         {posts.map((post) => (
           <article class="blog-card">
             <a href={post.href} class="blog-card__link">
@@ -60,20 +60,9 @@ const posts = [
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .blog-list__posts {
-    max-width: 720px;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .blog-card {
@@ -125,3 +114,4 @@ const posts = [
     overflow: hidden;
   }
 </style>
+<script src="../../scripts/scroll-animations.js"></script>

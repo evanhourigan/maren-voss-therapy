@@ -20,7 +20,7 @@ import CtaSection from '../components/CtaSection.astro';
 
   <section class="section-cream section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>I work with a number of clients in San Francisco who prefer telehealth over commuting to the East Bay. Secure video sessions offer the same quality of care as in-person work, and for many people, the convenience of logging on from home or a private office actually makes them more consistent with therapy.</p>
         <p>San Francisco's professional landscape produces a specific kind of stress. The pace, the cost of living, the culture of optimization, the pressure to perform in tech and startup environments while somehow maintaining a balanced life. Many of my SF clients found their way to me because they were looking for a therapist who understands that world from the inside, not from a textbook.</p>
         <p>If you're in San Francisco and looking for EMDR therapy, trauma-informed care, or a therapist who works with anxiety and burnout in high-achievers, I'd welcome a conversation.</p>
@@ -30,7 +30,7 @@ import CtaSection from '../components/CtaSection.astro';
 
   <section class="section-dark section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>I specialize in <a href="/trauma-ptsd" class="text-link-dark">trauma & PTSD</a>, <a href="/anxiety" class="text-link-dark">anxiety</a>, <a href="/burnout" class="text-link-dark">burnout and high-achiever stress</a>, <a href="/relationship-patterns" class="text-link-dark">relationship patterns</a>, and <a href="/life-transitions" class="text-link-dark">life transitions</a>. My approach integrates EMDR, IFS, and somatic therapy.</p>
         <p><a href="/how-i-work" class="text-link-dark">Learn more about how I work &rarr;</a></p>
       </div>
@@ -61,18 +61,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .body-text p {
     margin-bottom: 24px;
   }
@@ -85,7 +73,8 @@ import CtaSection from '../components/CtaSection.astro';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px 64px;
-    max-width: 760px;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .geo-info__item h2 {
@@ -111,3 +100,4 @@ import CtaSection from '../components/CtaSection.astro';
     }
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

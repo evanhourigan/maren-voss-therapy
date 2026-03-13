@@ -20,7 +20,7 @@ import CtaSection from '../components/CtaSection.astro';
 
   <section class="section-cream section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>If you're in Walnut Creek, Concord, Lafayette, or elsewhere in Contra Costa County, my Rockridge office is a 15-20 minute drive down Highway 24, and telehealth makes distance a non-issue for ongoing sessions.</p>
         <p>I work with several clients from the Walnut Creek area who are drawn to a more specialized approach than what's readily available in the suburbs. If you've been looking for an EMDR-certified therapist, someone who specializes in burnout or trauma beyond what most generalists offer, or simply a therapist whose style is more direct and active than what you've experienced before, we might be a good fit.</p>
         <p>Many of my Contra Costa clients are dual-income professionals managing high-pressure careers alongside family life. They've been holding it together for a long time and they're ready to stop performing okay and start actually feeling it.</p>
@@ -30,7 +30,7 @@ import CtaSection from '../components/CtaSection.astro';
 
   <section class="section-dark section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>I specialize in <a href="/trauma-ptsd" class="text-link-dark">trauma & PTSD</a>, <a href="/anxiety" class="text-link-dark">anxiety</a>, <a href="/burnout" class="text-link-dark">burnout and high-achiever stress</a>, <a href="/relationship-patterns" class="text-link-dark">relationship patterns</a>, and <a href="/life-transitions" class="text-link-dark">life transitions</a>. My approach integrates EMDR, IFS, and somatic therapy.</p>
         <p><a href="/how-i-work" class="text-link-dark">Learn more about how I work &rarr;</a></p>
       </div>
@@ -65,18 +65,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .body-text p {
     margin-bottom: 24px;
   }
@@ -89,7 +77,8 @@ import CtaSection from '../components/CtaSection.astro';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px 64px;
-    max-width: 760px;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .geo-info__item h2 {
@@ -115,3 +104,4 @@ import CtaSection from '../components/CtaSection.astro';
     }
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

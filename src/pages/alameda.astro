@@ -20,7 +20,7 @@ import CtaSection from '../components/CtaSection.astro';
 
   <section class="section-cream section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>Alameda is a quick trip from my Rockridge office, and for residents who prefer to stay on the island, telehealth sessions are a full alternative.</p>
         <p>I work with Alameda residents who are looking for therapy that goes deeper than what they've found through general directory searches. If you've been wanting to try EMDR, are interested in a therapist who specializes in trauma or anxiety rather than a generalist approach, or are simply looking for someone who will be direct and real with you, I'd welcome a conversation.</p>
         <p>Whether you're dealing with burnout from a demanding career across the Bay, navigating a life transition, or carrying something from your past that's still affecting your present, the work we do together can help.</p>
@@ -30,7 +30,7 @@ import CtaSection from '../components/CtaSection.astro';
 
   <section class="section-dark section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>I specialize in <a href="/trauma-ptsd" class="text-link-dark">trauma & PTSD</a>, <a href="/anxiety" class="text-link-dark">anxiety</a>, <a href="/burnout" class="text-link-dark">burnout and high-achiever stress</a>, <a href="/relationship-patterns" class="text-link-dark">relationship patterns</a>, and <a href="/life-transitions" class="text-link-dark">life transitions</a>. My approach integrates EMDR, IFS, and somatic therapy.</p>
         <p><a href="/how-i-work" class="text-link-dark">Learn more about how I work &rarr;</a></p>
       </div>
@@ -65,18 +65,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .body-text p {
     margin-bottom: 24px;
   }
@@ -89,7 +77,8 @@ import CtaSection from '../components/CtaSection.astro';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px 64px;
-    max-width: 760px;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .geo-info__item h2 {
@@ -115,3 +104,4 @@ import CtaSection from '../components/CtaSection.astro';
     }
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

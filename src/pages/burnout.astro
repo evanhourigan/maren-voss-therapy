@@ -22,7 +22,7 @@ import CtaSection from '../components/CtaSection.astro';
   <!-- You Might Be Here If... -->
   <section class="section-cream section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>From the outside, your life looks enviable. Good job. Good income. Good reputation. People come to you for advice. You're the one who holds things together.</p>
         <p>From the inside, you're running on empty. You can't remember the last time you did something because you wanted to rather than because you should. You're successful by every external measure and you feel hollow. Or numb. Or angry in a way that doesn't have a clear target.</p>
         <p>You might be in tech, medicine, law, academia, or running your own company. The specific industry doesn't matter as much as the pattern: you learned early that your value comes from what you produce, and you've been producing at an unsustainable pace for so long that you've forgotten what you actually want.</p>
@@ -35,7 +35,7 @@ import CtaSection from '../components/CtaSection.astro';
   <section class="section-dark section">
     <div class="container">
       <h2 class="heading-section specialty__section-heading">How I Work With This</h2>
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>I don't treat burnout with productivity tips or work-life balance frameworks. I treat it as what it actually is: a signal that the way you've been living is no longer sustainable, and probably never was.</p>
         <p>I came to this work from personal experience. Before I was a therapist, I spent six years in tech. I know what it feels like to have your identity welded to your performance. I know the specific flavor of emptiness that comes from being successful at something that doesn't matter to you. I know how the culture rewards the people who burn brightest and then discards them quietly when they burn out.</p>
         <p>The therapy work goes deeper than stress management. Using EMDR, we often discover that the drive to perform is connected to much earlier experiences: a childhood where love was conditional on achievement, a family system where being needed was the only way to feel safe, a formative experience that taught you that rest equals vulnerability and vulnerability equals danger.</p>
@@ -48,7 +48,7 @@ import CtaSection from '../components/CtaSection.astro';
   <section class="section-cream section">
     <div class="container">
       <h2 class="heading-section specialty__section-heading">What You Can Expect</h2>
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>This isn't a quick fix, and I'll be honest about that. Burnout develops over years and unwinding it takes more than a few sessions. But most of my clients notice a shift in how they relate to work and rest within the first two months.</p>
         <p>We start by understanding the pattern: what's driving you, what you're afraid would happen if you stopped, and what your body has been trying to tell you. From there, we use EMDR to process the underlying experiences and beliefs that keep the cycle going.</p>
         <p>The goal isn't to make you less ambitious. It's to help you build a life where your ambition serves you instead of consuming you. Some of my clients end up making big external changes. Others keep the same job but relate to it completely differently. Both outcomes are valid.</p>
@@ -62,18 +62,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .body-text p {
     margin-bottom: 24px;
   }
@@ -83,7 +71,8 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   .specialty__section-heading {
-    margin-bottom: 32px;
+    max-width: var(--content-width);
+    margin: 0 auto 32px;
   }
 
   .specialty__related {
@@ -92,3 +81,4 @@ import CtaSection from '../components/CtaSection.astro';
     color: var(--text-muted);
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

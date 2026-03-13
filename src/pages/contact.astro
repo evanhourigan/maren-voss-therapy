@@ -22,7 +22,7 @@ import Footer from '../components/Footer.astro';
   <section class="booking section-cream section">
     <div class="container">
       <h2 class="heading-section booking__heading">Schedule a Free Consultation</h2>
-      <div class="body-text booking__text">
+      <div class="body-text booking__text fade-in-up">
         <p>The best way to get started is a free 15-minute phone consultation. We'll talk about what you're looking for, I'll share a bit about how I work, and we'll figure out together if it's a good fit.</p>
         <p>No preparation needed. No commitment required. Just a conversation.</p>
       </div>
@@ -63,7 +63,7 @@ import Footer from '../components/Footer.astro';
   <section class="expect section-dark section">
     <div class="container">
       <h2 class="heading-section expect__heading">After you book a consultation, here's what happens:</h2>
-      <div class="body-text expect__content">
+      <div class="body-text expect__content fade-in-up">
         <p>You'll get a confirmation email with the phone number I'll call you from. At our scheduled time, we'll talk for about 15 minutes. I'll ask what's bringing you to therapy and what you're hoping for. You can ask me anything.</p>
         <p>If we both feel like it's a good fit, I'll send you intake paperwork through my secure client portal. You'll complete it before our first session. Then we begin.</p>
         <p>If I'm not the right fit, I'll say so honestly and do my best to point you toward someone who is.</p>
@@ -75,22 +75,10 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
-  /* Interior Hero */
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    margin-top: 16px;
-    font-size: var(--body);
-    color: var(--text-muted-light);
-    max-width: 600px;
-    line-height: 1.7;
-  }
-
   /* Booking */
   .booking__heading {
-    margin-bottom: 24px;
+    max-width: var(--content-width);
+    margin: 0 auto 24px;
   }
 
   .booking__text p {
@@ -102,15 +90,14 @@ import Footer from '../components/Footer.astro';
   }
 
   .booking__widget-placeholder {
-    margin-top: 48px;
-    margin-bottom: 80px;
+    margin: 48px auto 80px;
     border: 1px solid var(--text-muted);
     padding: 48px;
     min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 760px;
+    max-width: var(--content-width);
   }
 
   .booking__widget-placeholder span {
@@ -122,14 +109,16 @@ import Footer from '../components/Footer.astro';
 
   /* Contact Info */
   .contact-info__heading {
-    margin-bottom: 40px;
+    max-width: var(--content-width);
+    margin: 0 auto 40px;
   }
 
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px 64px;
-    max-width: 760px;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .contact-grid__item h3 {
@@ -155,8 +144,8 @@ import Footer from '../components/Footer.astro';
 
   /* What to Expect */
   .expect__heading {
-    margin-bottom: 32px;
-    max-width: 680px;
+    max-width: var(--content-width);
+    margin: 0 auto 32px;
   }
 
   .expect__content p {
@@ -186,3 +175,4 @@ import Footer from '../components/Footer.astro';
     }
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

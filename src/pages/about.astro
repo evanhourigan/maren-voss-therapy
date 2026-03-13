@@ -22,7 +22,7 @@ import CtaSection from '../components/CtaSection.astro';
   <!-- The Story -->
   <section class="story section-cream section">
     <div class="container">
-      <div class="body-text story__content">
+      <div class="body-text story__content fade-in-up">
         <p>I didn't set out to be a therapist.</p>
         <p>For six years I worked as a UX researcher at a mid-size tech company in the South Bay. I studied how people interact with systems. I ran user interviews, synthesized behavioral data, and helped design products that made sense to the people using them. I was good at my job.</p>
         <p>I was also slowly falling apart.</p>
@@ -38,7 +38,7 @@ import CtaSection from '../components/CtaSection.astro';
   <!-- Outside the Office -->
   <section class="outside section-dark section">
     <div class="container">
-      <div class="body-text outside__content">
+      <div class="body-text outside__content fade-in-up">
         <p>I run trails. Redwood Regional, Joaquin Miller, Tilden. Not as a wellness practice. It's how I stay sane.</p>
         <p>I live in Oakland with my partner and a deeply opinionated rescue mutt named Hank. I read more fiction than self-help. I cook elaborate meals and never follow the recipe.</p>
       </div>
@@ -50,8 +50,8 @@ import CtaSection from '../components/CtaSection.astro';
     <div class="container">
       <h2 class="heading-section credentials__heading">Education &amp; Training</h2>
 
-      <div class="credentials__grid">
-        <div class="credentials__column">
+      <div class="credentials__grid" data-stagger>
+        <div class="credentials__column fade-in-up">
           <h3 class="heading-sub credentials__sub-heading">Education</h3>
           <ul class="credentials__list">
             <li>MA, Counseling Psychology (Somatic Concentration), California Institute of Integral Studies (CIIS), San Francisco</li>
@@ -64,7 +64,7 @@ import CtaSection from '../components/CtaSection.astro';
           </ul>
         </div>
 
-        <div class="credentials__column">
+        <div class="credentials__column fade-in-up">
           <h3 class="heading-sub credentials__sub-heading">Advanced Training &amp; Certifications</h3>
           <ul class="credentials__list">
             <li>EMDRIA Certified EMDR Therapist</li>
@@ -93,19 +93,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  /* Interior Hero */
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    margin-top: 16px;
-    font-size: var(--body);
-    color: var(--text-muted-light);
-    max-width: 600px;
-    line-height: 1.7;
-  }
-
   /* Story */
   .story__content p {
     margin-bottom: 24px;
@@ -133,6 +120,8 @@ import CtaSection from '../components/CtaSection.astro';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .credentials__sub-heading {
@@ -175,3 +164,4 @@ import CtaSection from '../components/CtaSection.astro';
     }
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

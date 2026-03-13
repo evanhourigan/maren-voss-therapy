@@ -22,7 +22,7 @@ import CtaSection from '../components/CtaSection.astro';
   <!-- You Might Be Here If... -->
   <section class="section-cream section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>Your mind won't stop. You lie in bed running through tomorrow's conversations or last week's mistakes. You check things twice. You prepare for worst-case scenarios that almost never happen, but the almost is enough to keep you vigilant.</p>
         <p>Or maybe your anxiety lives in your body more than your thoughts. The tight chest. The shallow breathing. The knot in your stomach that shows up before meetings, social events, or quiet moments when there's nothing to distract you.</p>
         <p>You've tried the things you're supposed to try. Deep breathing. Meditation apps. Maybe even therapy where you talked about your anxiety, understood where it came from, and still felt it running in the background like an operating system you can't shut down.</p>
@@ -35,7 +35,7 @@ import CtaSection from '../components/CtaSection.astro';
   <section class="section-dark section">
     <div class="container">
       <h2 class="heading-section specialty__section-heading">How I Work With This</h2>
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>I don't treat anxiety as something to manage. I treat it as something to understand.</p>
         <p>Most anxiety has a logic. It's a nervous system response that made sense at some point, often a long time ago, and it's still running because the underlying experience was never fully processed. A childhood where emotions weren't safe. A relationship where you learned that letting your guard down had consequences. A work culture that rewarded hypervigilance and punished vulnerability.</p>
         <p>I use EMDR to reprocess the experiences that are fueling the anxiety at its root. Not just the surface-level triggers, but the earlier memories and beliefs that set the pattern in motion. Many of my clients are surprised to discover that their present-day anxiety is connected to something they hadn't considered relevant.</p>
@@ -49,7 +49,7 @@ import CtaSection from '../components/CtaSection.astro';
   <section class="section-cream section">
     <div class="container">
       <h2 class="heading-section specialty__section-heading">What You Can Expect</h2>
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>In the first few sessions, we'll map out your anxiety: when it shows up, what triggers it, how it feels in your body, and what you've already tried. I'll share my honest assessment of what I think is driving it and how I'd approach treatment.</p>
         <p>If EMDR is appropriate (and for anxiety rooted in past experiences, it usually is), we'll build the foundation and begin processing. Many clients experience a noticeable reduction in anxiety symptoms within the first month of EMDR work.</p>
         <p>I also work with clients whose anxiety is more generalized or existential, where there isn't a clear traumatic origin. In those cases, the work is more relational and exploratory, using IFS and somatic awareness to understand what the anxiety is protecting and what would need to shift for you to feel safe enough to let it go.</p>
@@ -63,18 +63,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .body-text p {
     margin-bottom: 24px;
   }
@@ -84,7 +72,8 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   .specialty__section-heading {
-    margin-bottom: 32px;
+    max-width: var(--content-width);
+    margin: 0 auto 32px;
   }
 
   .specialty__related {
@@ -93,3 +82,4 @@ import CtaSection from '../components/CtaSection.astro';
     color: var(--text-muted);
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

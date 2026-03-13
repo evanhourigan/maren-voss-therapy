@@ -22,7 +22,7 @@ import CtaSection from '../components/CtaSection.astro';
   <!-- You Might Be Here If... -->
   <section class="section-cream section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>Something is shifting. Maybe it's obvious: a career change, a divorce, a move, a death, becoming a parent. Maybe it's less visible: a quiet realization that the life you've built doesn't fit anymore, and you don't know what does.</p>
         <p>You might be in the middle of the transition and feeling unmoored. Or you might be standing at the edge of one, knowing something needs to change but paralyzed by the uncertainty of what comes after.</p>
         <p>Transitions are disorienting because they challenge your identity. When you've been someone for a long time, whether that's "the successful one" or "the partner" or "the person who has it together," and that identity starts to crack, it can feel like losing yourself. Even when the change is something you chose.</p>
@@ -35,7 +35,7 @@ import CtaSection from '../components/CtaSection.astro';
   <section class="section-dark section">
     <div class="container">
       <h2 class="heading-section specialty__section-heading">How I Work With This</h2>
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>I've been through this myself. I left a stable career in tech to become a therapist in my early thirties. I know what it feels like when the life you've constructed no longer matches the person inside it. I know the grief that comes with letting go of an identity that served you well, and the fear that what comes next might not work out.</p>
         <p>In our work together, we'll explore what's driving the transition and what's making it hard. Sometimes there's grief that needs space. Sometimes there's an old belief ("I'm not allowed to want something different") that needs to be examined. Sometimes the transition is activating old trauma or attachment wounds that are complicating the process.</p>
         <p>I use EMDR when past experiences are making the transition harder than it needs to be. IFS when there are conflicting parts of you pulling in different directions: the part that wants to leap and the part that's terrified. Somatic awareness to help you stay connected to your body's wisdom about what's right for you, even when your mind is spinning with analysis.</p>
@@ -47,7 +47,7 @@ import CtaSection from '../components/CtaSection.astro';
   <section class="section-cream section">
     <div class="container">
       <h2 class="heading-section specialty__section-heading">What You Can Expect</h2>
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>The length of this work depends on the nature of the transition. Some clients come for a defined period, three to six months, while they navigate a specific change. Others discover that the transition opens up deeper work they want to continue.</p>
         <p>I'm not going to tell you what to do. I'm going to help you clear away the fear, the old programming, and the inherited expectations so you can hear your own voice more clearly. The answers are yours. My job is to help you access them.</p>
         <p class="specialty__related">Related concerns: <a href="/burnout" class="text-link-light">Burnout & High-Achiever Stress</a> · <a href="/relationship-patterns" class="text-link-light">Relationship Patterns</a></p>
@@ -60,18 +60,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .body-text p {
     margin-bottom: 24px;
   }
@@ -81,7 +69,8 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   .specialty__section-heading {
-    margin-bottom: 32px;
+    max-width: var(--content-width);
+    margin: 0 auto 32px;
   }
 
   .specialty__related {
@@ -90,3 +79,4 @@ import CtaSection from '../components/CtaSection.astro';
     color: var(--text-muted);
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

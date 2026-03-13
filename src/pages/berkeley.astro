@@ -20,7 +20,7 @@ import CtaSection from '../components/CtaSection.astro';
 
   <section class="section-cream section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>If you're looking for a therapist in or near Berkeley, my office in Rockridge is a short trip across the Oakland-Berkeley border. The office is one block from Rockridge BART, making it accessible from anywhere on the BART line.</p>
         <p>Many of my Berkeley clients are affiliated with UC Berkeley or the graduate programs at CIIS, the Wright Institute, or GTU. I understand the specific pressures of academic life: the publish-or-perish mentality, the imposter syndrome that comes with being surrounded by high-caliber peers, and the way institutional culture can demand performance while offering very little support.</p>
         <p>I also work with Berkeley residents who are in tech, healthcare, nonprofit work, or any field where the demands are high and the internal pressure to keep producing is relentless. If you're in Berkeley and searching for a therapist who specializes in EMDR, anxiety, trauma, or burnout, I'd be glad to talk.</p>
@@ -30,7 +30,7 @@ import CtaSection from '../components/CtaSection.astro';
 
   <section class="section-dark section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>I specialize in <a href="/trauma-ptsd" class="text-link-dark">trauma & PTSD</a>, <a href="/anxiety" class="text-link-dark">anxiety</a>, <a href="/burnout" class="text-link-dark">burnout and high-achiever stress</a>, <a href="/relationship-patterns" class="text-link-dark">relationship patterns</a>, and <a href="/life-transitions" class="text-link-dark">life transitions</a>. My approach integrates EMDR, IFS, and somatic therapy.</p>
         <p><a href="/how-i-work" class="text-link-dark">Learn more about how I work &rarr;</a></p>
       </div>
@@ -65,18 +65,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .body-text p {
     margin-bottom: 24px;
   }
@@ -89,7 +77,8 @@ import CtaSection from '../components/CtaSection.astro';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px 64px;
-    max-width: 760px;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .geo-info__item h2 {
@@ -115,3 +104,4 @@ import CtaSection from '../components/CtaSection.astro';
     }
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

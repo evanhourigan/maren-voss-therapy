@@ -22,7 +22,7 @@ import CtaSection from '../components/CtaSection.astro';
   <!-- You Might Be Here If... -->
   <section class="section-cream section">
     <div class="container">
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>You keep ending up in the same dynamic. Different person, same feeling. You're the one who over-functions and then resents it. You're the one who pulls away when things get close. You choose partners who are emotionally unavailable and then wonder why you feel alone.</p>
         <p>Or maybe you're in a relationship that's good on paper but something is missing. You can't fully relax into it. You're waiting for the other shoe to drop. You hold back parts of yourself because the last time you were fully honest with someone, it didn't go well.</p>
         <p>You might notice that you're a different person in relationships than you are everywhere else. At work you're confident and direct. In your closest relationships you become anxious, avoidant, or someone you don't recognize. That gap bothers you, and it should. It's telling you something.</p>
@@ -35,7 +35,7 @@ import CtaSection from '../components/CtaSection.astro';
   <section class="section-dark section">
     <div class="container">
       <h2 class="heading-section specialty__section-heading">How I Work With This</h2>
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>Every relationship pattern has a history. The way you attach to people, the roles you fall into, the things you tolerate and the things that trigger you, these were all learned. Usually early. Usually in your family of origin.</p>
         <p>I use IFS to help you understand the parts involved. There's often a protector part that runs the show in relationships: the people-pleaser, the caretaker, the one who keeps score, the one who leaves before being left. Underneath that protector is usually something younger and more vulnerable that learned a painful lesson about love, safety, or worthiness a long time ago.</p>
         <p>EMDR helps us reprocess those foundational experiences so they stop driving your present-day relationships. When the charge comes off the old wound, the pattern loses its grip. You start responding to the person in front of you instead of reacting to someone from your past.</p>
@@ -48,7 +48,7 @@ import CtaSection from '../components/CtaSection.astro';
   <section class="section-cream section">
     <div class="container">
       <h2 class="heading-section specialty__section-heading">What You Can Expect</h2>
-      <div class="body-text">
+      <div class="body-text fade-in-up">
         <p>This work tends to unfold in layers. In the early sessions, we map your relational patterns: what happens, with whom, and what it feels like in your body when the pattern activates. Then we trace those patterns back to their origin.</p>
         <p>Some clients are here because they want to show up differently in a current relationship. Others are here because they keep choosing the wrong relationships and want to understand why. Both paths lead to the same place: understanding the attachment wounds underneath the pattern and processing them so you have a genuine choice in how you relate to people.</p>
         <p>This is not quick work, and I won't pretend otherwise. Attachment patterns are deep. But they are changeable, and most of my clients begin to notice shifts in how they relate to others within the first few months.</p>
@@ -62,18 +62,6 @@ import CtaSection from '../components/CtaSection.astro';
 </BaseLayout>
 
 <style>
-  .interior-hero {
-    padding-top: calc(var(--section-pad) + 72px);
-  }
-
-  .interior-hero__tagline {
-    color: var(--text-muted-light);
-    font-size: var(--body);
-    max-width: 600px;
-    margin-top: 16px;
-    line-height: 1.7;
-  }
-
   .body-text p {
     margin-bottom: 24px;
   }
@@ -83,7 +71,8 @@ import CtaSection from '../components/CtaSection.astro';
   }
 
   .specialty__section-heading {
-    margin-bottom: 32px;
+    max-width: var(--content-width);
+    margin: 0 auto 32px;
   }
 
   .specialty__related {
@@ -92,3 +81,4 @@ import CtaSection from '../components/CtaSection.astro';
     color: var(--text-muted);
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>

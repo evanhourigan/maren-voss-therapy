@@ -42,16 +42,18 @@ const specialties = [
   <!-- Hero -->
   <section class="hero section-dark section--hero">
     <div class="container">
-      <h1 class="heading-hero hero__headline">You've done the work.<br />It's time to go deeper.</h1>
-      <p class="hero__subtext">I'm Maren Voss, a licensed therapist in Oakland specializing in EMDR, trauma, and anxiety. I work with high-achieving adults who are tired of coping and ready to actually change.</p>
-      <a href="/contact" class="btn">Schedule a Free Consultation</a>
+      <div class="content-column">
+        <h1 class="heading-hero hero__headline">You've done the work.<br />It's time to go deeper.</h1>
+        <p class="hero__subtext">I'm Maren Voss, a licensed therapist in Oakland specializing in EMDR, trauma, and anxiety. I work with high-achieving adults who are tired of coping and ready to actually change.</p>
+        <a href="/contact" class="btn">Schedule a Free Consultation</a>
+      </div>
     </div>
   </section>
 
   <!-- The Short Version -->
   <section class="short-version section-cream section">
     <div class="container">
-      <div class="short-version__content body-text">
+      <div class="short-version__content body-text fade-in-up">
         <p>Most of my clients have been to therapy before. They're not starting from zero. They're smart, self-aware, and functioning well enough that no one around them is worried. But something still isn't working.</p>
         <p>The anxiety that never fully resolves. The relationship pattern that keeps repeating. The success that looks right on paper but feels hollow in the body.</p>
         <p>I use EMDR, IFS, and somatic therapy to get underneath the stories you've been telling yourself and into the places where real change happens. My office is in Rockridge, Oakland. I also see clients across California via telehealth.</p>
@@ -63,9 +65,9 @@ const specialties = [
   <section class="specialties section-dark section">
     <div class="container">
       <h2 class="heading-section specialties__heading">What I Treat</h2>
-      <div class="specialties__grid">
+      <div class="specialties__grid" data-stagger>
         {specialties.map((item) => (
-          <div class="specialty-card">
+          <div class="specialty-card fade-in-up">
             <h3 class="specialty-card__title">{item.title}</h3>
             <p class="specialty-card__desc">{item.description}</p>
             <a href={item.href} class="specialty-card__link text-link-dark">Learn more about {item.title} &rarr;</a>
@@ -78,7 +80,7 @@ const specialties = [
   <!-- Beyond Talk Therapy -->
   <section class="approach-preview section-cream section">
     <div class="container approach-preview__layout">
-      <div class="approach-preview__text">
+      <div class="approach-preview__text fade-in-up">
         <h2 class="heading-section">Beyond Talk Therapy</h2>
         <div class="body-text">
           <p>I don't do a lot of homework assignments or thought exercises. I'm more interested in what happens in your body when you tell me something difficult. That's where the real information is.</p>
@@ -99,7 +101,7 @@ const specialties = [
       <div class="about-preview__image" aria-label="Headshot placeholder">
         <span class="placeholder-block placeholder-block--portrait">HEADSHOT</span>
       </div>
-      <div class="about-preview__text">
+      <div class="about-preview__text fade-in-up">
         <h2 class="heading-section">A different kind of background</h2>
         <div class="body-text">
           <p>Before I was a therapist, I was a UX researcher at a tech company in the South Bay. I was good at the work. I was also having panic attacks in the bathroom before stakeholder meetings and calling it normal.</p>
@@ -114,7 +116,7 @@ const specialties = [
   <section class="testimonial section-cream section">
     <div class="container testimonial__inner">
       <span class="testimonial__quote" aria-hidden="true">&ldquo;</span>
-      <blockquote class="testimonial__text">
+      <blockquote class="testimonial__text scale-in">
         I'd done talk therapy for years. The EMDR work with Maren got to things in three months that I couldn't reach in five years of talking.
       </blockquote>
       <cite class="testimonial__attribution">&mdash; Client, 2024</cite>
@@ -135,20 +137,18 @@ const specialties = [
 
   .hero__headline {
     margin-bottom: 24px;
-    max-width: 800px;
   }
 
   .hero__subtext {
     font-size: var(--body);
     color: var(--text-muted-light);
-    max-width: 600px;
     margin-bottom: 40px;
     line-height: 1.7;
   }
 
   /* Short Version */
   .short-version__content {
-    max-width: 680px;
+    max-width: var(--content-width);
   }
 
   .short-version__content p {
@@ -168,6 +168,16 @@ const specialties = [
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 48px 40px;
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .specialty-card {
+    transition: transform 200ms ease;
+  }
+
+  .specialty-card:hover {
+    transform: translateY(-2px);
   }
 
   .specialty-card__title {
@@ -194,6 +204,8 @@ const specialties = [
     grid-template-columns: 55% 1fr;
     gap: 64px;
     align-items: center;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .approach-preview__text h2 {
@@ -216,6 +228,8 @@ const specialties = [
     grid-template-columns: 40% 1fr;
     gap: 64px;
     align-items: center;
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .about-preview__text h2 {
@@ -262,7 +276,7 @@ const specialties = [
   /* Testimonial */
   .testimonial__inner {
     text-align: center;
-    max-width: 720px;
+    max-width: var(--content-width);
     margin: 0 auto;
     position: relative;
   }
@@ -270,10 +284,10 @@ const specialties = [
   .testimonial__quote {
     display: block;
     font-family: var(--font-serif);
-    font-size: 5rem;
+    font-size: 120px;
     line-height: 1;
     color: var(--terracotta);
-    margin-bottom: -20px;
+    margin-bottom: -24px;
   }
 
   .testimonial__text {
@@ -310,7 +324,7 @@ const specialties = [
     }
 
     .testimonial__quote {
-      font-size: 4rem;
+      font-size: 100px;
     }
   }
 
@@ -325,7 +339,8 @@ const specialties = [
     }
 
     .testimonial__quote {
-      font-size: 3.5rem;
+      font-size: 80px;
     }
   }
 </style>
+<script src="../scripts/scroll-animations.js"></script>
